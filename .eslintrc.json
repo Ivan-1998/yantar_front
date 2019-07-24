@@ -1,0 +1,35 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:vue/essential",
+    "plugin:import/errors",
+    "eslint:recommended",
+    "plugin:import/warnings"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "window": true,
+    "document": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "vue"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "windows"],
+    "camelcase": [0, {"properties": "never"}],
+    "comma-dangle": ["error", "never"],
+    "import/no-unresolved": "off",
+    "max-len": ["error", {"code": 999999999999}],
+    "import/named": [2, { "commonjs": true }]
+  }
+}
