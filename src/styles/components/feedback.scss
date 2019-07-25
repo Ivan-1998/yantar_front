@@ -1,0 +1,82 @@
+.feedback {
+    background: url('/src/images/feedback-background.jpg');
+    background-size: cover;
+    &__content {
+        // outline: $outline;
+        width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        .form {
+            width: 65%;
+            padding: 40px 0;
+            h3 {
+                font-size: 30px;
+                padding-bottom: 15px;
+                color: $black;
+            }
+            &__content {
+                //outline: $outline;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+            }
+            &__inputs {
+                width: 49%;
+                input {
+                    width: calc(100% - 15px);
+                    height: 45px;
+                    font-size: 14px;
+                    margin: 5px auto;
+                    color: $black;
+                    padding-left: 15px;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    background: #fff;
+                }
+            }
+            &__textarea {
+                width: 49%;
+                height: 167px; // how inputs height - 10px
+                textarea {
+                    width: calc(100% - 30px);
+                    height: calc(100% - 30px);
+                    resize: none;
+                    border-radius: 4px;
+                    background: #fff;
+                    color: $black;
+                    font-size: 14px;
+                    padding: 15px;
+                    border: 1px solid transparent;
+                }
+            }
+            &__submit {
+                margin-top: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                input[type="submit"] {
+                    background: #1E1E1E;
+                    border-radius: 4px;
+                    border: 1px solid transparent;
+                    color: #fff;
+                    height: 45px;
+                    width: 200px;
+                    font-size: 14px;
+                    &:hover {
+                        background: #000;
+                    }
+                }
+            }   
+        }
+
+        img {
+            position: absolute;
+            right: 2%;
+            bottom: 0;
+            width: 400px;
+            z-index: 2;
+        }
+    }
+}

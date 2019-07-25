@@ -1,9 +1,14 @@
+@import './variables.scss';
 // includes
 @import './includes/variables.scss';
 @import './includes/fonts.scss';
 @import './includes/common.scss';
 // ui
-
+@import './ui/ui.scss';
 // components
-
+@import './components/header.scss';
+@import './components/footer.scss';
+@import './components/feedback.scss';
 // pages
+@import './pages/main.scss';
+@import './pages/products.scss';

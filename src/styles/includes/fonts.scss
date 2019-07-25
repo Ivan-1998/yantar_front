@@ -1,3 +1,13 @@
 @font-face {
-  
+    src: url('/src/fonts/Regular.ttf');
+    font-family: SFRegular;
+}
+@font-face {
+    src: url('/src/fonts/Light.ttf');
+    font-family: SFLight;
+    font-weight: 100;
+}
+@font-face {
+    src: url('/src/fonts/Cervo.otf');
+    font-family: Cervo;
 }

@@ -6,6 +6,7 @@ import routes from './js/routes';
 import './styles/index.scss';
 import App from './app/App.vue';
 
+
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
