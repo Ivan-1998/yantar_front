@@ -14,8 +14,7 @@
                         <div class="good__inner">
                             <div class="good__title">Четкие семена от Кахи</div>
                             <p>
-                                216 тг/пачка<br>
-                                <span>50 грамм</span>
+                                216 тг/пачка
                             </p>
                             <div class="good__info-more">
                                 <a href="#" class="link-go">
@@ -34,8 +33,7 @@
                         <div class="good__inner">
                             <div class="good__title">Подсолнечное масло</div>
                             <p>
-                                216 тг/пачка<br>
-                                <span>50 грамм</span>
+                                216 тг/пачка
                             </p>
                             <div class="good__info-more">
                                 <a href="#" class="link-go">
@@ -54,8 +52,7 @@
                         <div class="good__inner">
                             <div class="good__title">Подсолнечное масло</div>
                             <p>
-                                216 тг/пачка<br>
-                                <span>50 грамм</span>
+                                216 тг/пачка
                             </p>
                             <div class="good__info-more">
                                 <a href="#" class="link-go">
@@ -74,8 +71,7 @@
                         <div class="good__inner">
                             <div class="good__title">Подсолнечное масло</div>
                             <p>
-                                216 тг/пачка<br>
-                                <span>50 грамм</span>
+                                216 тг/пачка
                             </p>
                             <div class="good__info-more">
                                 <a href="#" class="link-go">
@@ -94,8 +90,7 @@
                         <div class="good__inner">
                             <div class="good__title">Подсолнечное масло</div>
                             <p>
-                                216 тг/пачка<br>
-                                <span>50 грамм</span>
+                                216 тг /пачка
                             </p>
                             <div class="good__info-more">
                                 <a href="#" class="link-go">
@@ -114,8 +109,7 @@
                         <div class="good__inner">
                             <div class="good__title">Подсолнечное масло</div>
                             <p>
-                                216 тг/пачка<br>
-                                <span>50 грамм</span>
+                                216 тг/пачка
                             </p>
                             <div class="good__info-more">
                                 <a href="#" class="link-go">

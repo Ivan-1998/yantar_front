@@ -1,10 +1,10 @@
-@import './variables.scss';
 // includes
 @import './includes/variables.scss';
 @import './includes/fonts.scss';
 @import './includes/common.scss';
 // ui
 @import './ui/ui.scss';
+@import './ui/inputs.scss';
 // components
 @import './components/header.scss';
 @import './components/footer.scss';

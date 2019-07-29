@@ -10,29 +10,29 @@
                             <div class="lines"></div>
                         </div>
                         <div class="form__image flex-center">
-                            <img src="/src/images/question.png" alt="Ответим на любые ваши вопросы!">
+                            <img src="/src/images/question.svg" alt="Ответим на любые ваши вопросы!">
                         </div>
                     </div>
                     <div class="form__inputs">
-                        <div>
+                        <div class="form-group">
                             <input type="text" placeholder="Ваше имя" required>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <input type="email" placeholder="Ваш email" required>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <input type="text" placeholder="Ваш номер телефона">
                         </div>
-                        <div class="textarea">
+                        <div class="form-group form-group__textarea">
                             <textarea placeholder="Ваше сообщение" required></textarea>
                         </div>
-                        <div class="form-group form-group-checkbox">
+                        <div class="form-group form-group__checkbox">
                             <label>Я согласен с <a href="#">условиями обработки персональных данных</a> 
                                 <input type="checkbox" checked>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                        <div class="submit">
+                        <div class="form-group">
                             <input type="submit" value="Отправить письмо">
                         </div>
                     </div>
