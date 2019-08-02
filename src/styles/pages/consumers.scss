@@ -1,0 +1,199 @@
+.consumers {
+    /*outline: $outline;*/
+    &__header {
+        background-size: contain;
+        position: relative;
+        &__content {
+            width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+            
+            img {
+                // z-index: 3;
+                pointer-events: none;
+                position: absolute;
+                right: 5%;
+                bottom: -1%;
+            }
+
+            /*&-play {
+                position: absolute;
+                top: 32%;
+                right: 22%;
+                width: 150px;
+                height: 150px;
+                cursor: pointer;
+                z-index: 1;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: all;
+                }
+            }*/
+        }
+        &__text {
+            width: 55%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            h1 {
+                line-height: normal;
+                color: #313131;
+                line-height: 150%;
+                font-size: 34px;
+                letter-spacing: 1px;
+            }
+            h2 {
+                line-height: 160%;
+                font-size: 20px;
+                margin-top: 10px;
+                letter-spacing: 1px;
+                color: $black;
+            }
+            
+        }
+        &__right {
+            position: absolute;
+            bottom: 0;
+            right: 10%;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: #FFE461;
+            background-size: cover;
+            z-index: -1;
+        }
+    }
+    &__main {
+        padding: 100px 0;
+        background: linear-gradient(180deg, #F7F7F7 1.44%, #FFFFFF 63.06%);
+        &__content {
+            width: 1100px;
+            margin: 0 auto;
+        }
+        &__info {
+            padding-bottom: 40px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            &:first-child, &:nth-child(2) {
+                margin-bottom: 50px;
+            }
+            .plus {
+                &__oil, &__halva {
+                    position: absolute;
+                    top: 5%;
+                    left: 0%; 
+                    overflow: hidden;
+                }
+                &__semya {
+                    position: absolute;
+                    top: 5%;
+                    right: 0%; 
+                    transform: scale(-1, 1);
+                }
+            }
+            .oil {
+                pointer-events: none;
+                position: absolute;
+                left: 4%; 
+                bottom: 50%;    
+                z-index: 1;
+                img {
+                    width: 80px;
+                    height: auto;
+                }
+            }
+            .semya {
+                pointer-events: none;
+                position: absolute;
+                right: 3%;
+                bottom: 50%;
+                z-index: 1;
+                transform: rotate(-25deg);
+                img {
+                    width: 150px;
+                    height: auto;
+                }
+            }
+            .halva {
+                pointer-events: none;
+                position: absolute;
+                left: -2%;
+                bottom: 43%;
+                z-index: 1;
+                img {
+                    width: 200px;
+                    height: auto;
+                }
+            }
+            .title {
+                &-oil{
+                    width: 750px;
+                    font-size: 20px;
+                    line-height: normal;
+                    color: #373737;
+                    padding-top: 60px;
+                    margin-left: 25%;
+                }
+                &-semya{
+                    width: 800px;
+                    font-size: 20px;
+                    line-height: normal;
+                    color: #373737;
+                    padding-top: 60px;
+                    margin-left: 10%;
+                }
+                &-halva{
+                    width: 700px;
+                    font-size: 20px;
+                    line-height: normal;
+                    color: #373737;
+                    padding-top: 60px;
+                    margin-left: 25%;
+                    margin-right: 2%;
+                }
+                
+            }
+            .products{
+                &__oil {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 25%;
+                    width: 750px;
+                }
+                &__semya {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 10%;
+                    width: 700px;
+                }
+                &__halva {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 25%;
+                    margin-right: 2%;
+                    width: 700px;
+                }    
+                &__product {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 20px 0;
+                    img {
+                        margin-right: 30px;
+                    }
+                }
+                &__text {
+                    font-size: 16px;
+                    color: #737373;
+                }
+            }
+        }
+    }
+}

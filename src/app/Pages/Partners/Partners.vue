@@ -1,6 +1,94 @@
 <template>
-    <div>
-        Партнерам
+    <div class="partners">
+        <div class="partners__header">
+            <div class="partners__header__content">
+                <div class="partners__header__text">
+                    <h1>Приглашаем Вас к взаимовыгодному сотрудничеству!</h1>
+                    <h2>Мы всегда открыты для любых интересных предложений и вариантов продуктивного сотрудничества!</h2>
+                </div>
+                <img src="/src/images/partners-girl.png" alt="наши партнеры">
+            </div>
+            <div class="partners__header__right"></div>
+        </div>
+
+        <div class="partners__advantages">
+            <div class="partners__advantages__content">
+                <div class="partners__advantages__title">Почему работать с нами выгодно?</div>
+                <div class="advantage">
+                    <div class="advantage__img">
+                        <img src="/src/images/success.svg">
+                    </div>
+                    <div class="advantage__info">
+                        Уверенная позиция на рынке.
+                    </div>
+                </div>
+                <div class="advantage">
+                    <div class="advantage__img">
+                        <img src="/src/images/like.svg">
+                    </div>
+                    <div class="advantage__info">
+                        Продукт высокого качества
+                    </div>
+                </div>
+                <div class="advantage">
+                    <div class="advantage__img">
+                        <img src="/src/images/factory.svg">
+                    </div>
+                    <div class="advantage__info">
+                        Собственное производство
+                    </div>
+                </div>
+                <div class="advantage">
+                    <div class="advantage__img">
+                        <img src="/src/images/employee.svg">
+                    </div>
+                    <div class="advantage__info">
+                        Выгодные условия сотрудничества
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="partners__stages">
+            <div class="partners__stages__content">
+                <div class="partners__stages__title">Этапы производства</div>
+                <div class="stage">
+                    <div class="stage__img">
+                        <img src="/src/images/flowers.svg">
+                    </div>
+                    <div class="stage__info">
+                        Выращивание урожая на поле
+                    </div>
+                </div>
+                <img src="/src/images/line1.svg">
+                <div class="stage">
+                    <div class="stage__img">
+                        <img src="/src/images/harvester.svg">
+                    </div>
+                    <div class="stage__info">
+                        Сбор и хранение сырья
+                    </div>
+                </div>
+                <img src="/src/images/line2.svg">
+                <div class="stage">
+                    <div class="stage__img">
+                        <img src="/src/images/conveyor.svg">
+                    </div>
+                    <div class="stage__info">
+                        Производство продуктов сырья
+                    </div>
+                </div>
+                <img src="/src/images/line3.svg">
+                <div class="stage">
+                    <div class="stage__img">
+                        <img src="/src/images/store.svg">
+                    </div>
+                    <div class="stage__info">
+                        Дистрибьюция готового продукта
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
