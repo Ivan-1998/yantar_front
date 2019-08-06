@@ -8,7 +8,7 @@
                 <li><router-link tag="a" to="/consumers"><img src="/src/images/logo.svg"></router-link></li>
                 <li><router-link tag="a" to="/partners">Партнерам</router-link></li>
                 <li><router-link tag="a" to="/about">О нас</router-link></li>
-                <li><a href="#">Контакты</a></li>
+                <li><router-link tag="a" to="/contacts">Контакты</router-link></li>
             </ul>
         </div>
     </header>

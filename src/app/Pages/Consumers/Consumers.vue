@@ -6,7 +6,7 @@
                     <h1>Потребители знакомы с нашими первоклассными продуктами с 1990 года!</h1>
                     <h2>Мы предлагаем только качественные продукты, произведенные из отборных семян подсолнечника</h2>
                 </div>
-                <img src="/src/images/info_link3.png" alt="потребители">
+                <img src="/src/images/maslo-girl.png" alt="потребители">
                 
                 <!--div class="consumers-header-content-play">
                     <img src="/src/images/play.svg" alt="потребители">
