@@ -3,14 +3,14 @@
         <div class="footer__content">
             <div class="footer__inner">
                 <ul class="footer__item">
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Продукция</a></li>
-                    <li><a href="#">Потребителям</a></li>
-                    <li><a href="#">Партнерам</a></li>
+                    <li><router-link tag="a" to="/">Главная</router-link></li>
+                    <li><router-link tag="a" to="/products">Продукция</router-link></li>
+                    <li><router-link tag="a" to="/consumers">Потребителям</router-link></li>
+                    <li><router-link tag="a" to="/partners">Партнерам</router-link></li>
                 </ul>
                 <ul class="footer__item">
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><router-link tag="a" to="/about">О нас</router-link></li>
+                    <li><router-link tag="a" to="/contacts">Контакты</router-link></li>
                     <li><a href="#">Правовая информация</a></li>
                     <li><a href="#">Политика конфиденциальности</a></li>
                 </ul>

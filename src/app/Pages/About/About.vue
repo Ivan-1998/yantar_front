@@ -31,7 +31,16 @@
 
             <div class="about__main__certificates">
                 <div class="about__main__inner">
-                
+                    <div class="left">
+                        Наши лицензии и сертификаты
+                    </div>
+
+                    <div class="right">
+                        <img src="/src/images/certificate.png">
+                        <img src="/src/images/certificate.png">
+                        <img src="/src/images/certificate.png">
+                        <img src="/src/images/certificate.png">
+                    </div>
                 </div>
             </div>
         </div>
