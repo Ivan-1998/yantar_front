@@ -1,10 +1,11 @@
 .partners {
-    background: #FCFCFC;
     &__header {
         background: /*url('/src/images/feedback-background.jpg')*/ #fff;
         background-size: cover;
         overflow: hidden;
         position: relative;
+        width: 1280px;
+        margin: 0 auto;
         &__content {
             // outline: $outline;
             display: flex;
@@ -15,7 +16,6 @@
             height: 460px;
             margin: 0 auto;
             position: relative;
-            
             img {
                 z-index: 3;
                 pointer-events: none;
@@ -60,6 +60,7 @@
     }
 
     &__advantages {   
+        background: #FCFCFC;
         z-index: 5;
         pointer-events: none;
         &__title {
@@ -146,6 +147,79 @@
                     font-size: 16px;
                 }
             }
+        }
+    }
+}
+
+@media (max-width: $desktop-big) {
+    .partners {
+        &__header {
+            width: 100%;
+            max-width: $desktop-big; 
+            &__content {
+                width: 100%;
+            }
+            
+        }
+        &__advantages {
+            width: 100%;
+            max-width: $desktop-big; 
+            &__content {
+                width: 100%;
+                height: auto;
+                padding: 60px 0;
+            }
+        }
+        &__stages {
+            width: 100%;
+            max-width: $desktop-big; 
+            &__content {
+                width: 100%;
+                height: auto;
+                padding: 60px 0;
+            }
+        }
+    }
+}
+
+@media (max-width: $desktop-little) {
+    .partners {
+        &__header {
+            max-width: $desktop-little; 
+        } 
+        &__advantages {
+            max-width: $desktop-little; 
+        }
+        &__stages {
+            max-width: $desktop-little; 
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .partners {
+        &__header {
+            max-width: $tablet; 
+        }
+        &__advantages {
+            max-width: $tablet; 
+        }
+        &__stages {
+            max-width: $tablet; 
+        }
+    }
+}
+
+@media (max-width: $phone) {
+    .partners {
+        &__header {
+            max-width: $phone; 
+        }
+        &__advantages {
+            max-width: $phone; 
+        }
+        &__stages {
+            max-width: $phone; 
         }
     }
 }

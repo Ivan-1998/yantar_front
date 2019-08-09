@@ -49,22 +49,12 @@
             width: auto;
         }
         &__inner{
-            display: flex;
             justify-content: space-around;
-            ul {
-                li {
-                    list-style-type: none;
-                    display: block;
-                    margin: 10px 0;
-                }
-                &:last-child {
-                    text-align: right;
-                }
-            }
         }
         .copyright {
             &__inner {
                 width: auto;
+                justify-content: space-around;
             }
         }
     }
@@ -74,7 +64,6 @@
 @media (max-width: $desktop-little) {
     .footer {
         max-width: $desktop-little;
-
     }
 }
 

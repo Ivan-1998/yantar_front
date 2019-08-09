@@ -48,3 +48,67 @@
     border: 1px solid #3E3E3E;
     margin: 5px 0;
 }
+
+@media (max-width: $desktop-big) {
+    .feedback {
+        width: 100%;
+        max-width: $desktop-big; 
+        &__content {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+
+@media (max-width: $desktop-little) {
+    .feedback {
+        max-width: $desktop-little; 
+        &__content {
+            .form {
+                width: 85%;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .feedback {
+        max-width: $tablet; 
+        &__content {
+            .form {
+                width: 80%;
+                &__content { 
+                    flex-wrap: wrap;      
+                }
+                &__inner {
+                    width: 100%;
+                    img {
+                        padding-top: 20px;
+                    }
+                }
+                &__title {
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
+                &__inputs {
+                    padding: 0 40px 40px 40px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: $phone) {
+    .feedback {
+        max-width: $phone;
+        &__content {
+            .form {
+                width: 85%;
+            }
+        } 
+    }
+}

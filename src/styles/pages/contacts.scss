@@ -28,3 +28,38 @@
         }
     }
 }
+
+@media (max-width: $desktop-big) {
+    .contacts {
+        width: 100%;
+        margin: 0 auto;
+        max-width: $desktop-big;  
+    }
+}
+
+@media (max-width: $desktop-little) {
+    .contacts {
+        max-width: $desktop-little;
+        &__left {
+            width: 60%;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .contacts {
+        max-width: $tablet;
+        &__left {
+            width: 75%;
+        }
+    }
+}
+
+@media (max-width: $phone) {
+    .contacts {
+        max-width: $phone;  
+        &__left {
+            width: 100%;
+        }
+    }
+}
