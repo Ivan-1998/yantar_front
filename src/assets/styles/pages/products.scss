@@ -1,0 +1,231 @@
+.products {
+    padding: 30px 0;
+
+    &__content {
+        // outline: $outline;
+        width: 1280px;
+        margin: 0 auto;
+    }
+    .goods {
+        width: 1100px;
+        margin: 0 auto;
+        &__title {
+            font-size: 27px;
+            font-weight: 100;
+            font-family: SFLight, Arial, Helvetica, sans-serif;
+        }
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px auto 0 auto;
+            .good {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                width: 31%;
+                background: #fff;
+                box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.16);
+                border-radius: 15px;
+                color: $black;
+                cursor: pointer;
+                margin: 0 auto 30px auto;
+                &__title {
+                    font-size: 18px;
+                    font-weight: 100;
+                    position: relative;
+                    padding: 0 0 10px 20px;
+                    &::after {
+                        content: '';
+                        width: 10%;
+                        height: 2px;
+                        background: $black;
+                        position: absolute;
+                        bottom: 0;
+                        left: 20px;
+                    }
+                }
+                &__img {
+                    background: no-repeat;
+                    background-size: 80%;
+                    background-clip: border-box;
+                    height: 200px;
+                    width: 35%;
+                    border-top-left-radius: 15px;
+                    border-bottom-left-radius: 15px;
+                    overflow: hidden;
+                }
+                &__inner {
+                    width: 70%;
+                    padding-top: 30px;
+                    p {
+                        color: #838383;
+                        margin: 15px 0 25px 0;
+                        font-size: 18px;
+                        padding-left: 20px;
+                        span {
+                            font-size: 16px;
+                            font-family: SFLight, Arial, Helvetica, sans-serif;
+                        }
+                    }
+                    
+                }
+                &__info-more {
+                    width: 104%;
+                    padding: 12px 0;
+                    --time: 0.7s;
+                    position: relative;
+                    display: inline-block;
+                    overflow: hidden;
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                    .link-go {
+                        width: 62%;
+                        .arrow {
+                            width: 30px;
+                            z-index: 2;
+                        }
+                        span {
+                            padding-left: 20px;
+                            z-index: 2;
+                        }
+                    }
+                }
+                &:hover {
+                    .arrow {
+                        width: 40px;
+                    }
+                }
+            }
+        }
+        &__paginate {
+            // outline: $outline;
+            text-align: center;
+            li {
+                display: inline-block;
+                background: #fff;
+                padding: 10px 15px;
+                cursor: pointer;
+                text-align: center;
+                color: $black;
+                border-radius: 10px;
+                font-size: 14px;
+                &:not(:first-child) {
+                    margin-left: 5px;
+                }
+                &:first-child {
+                    background: #aaaaaa;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+// button 1
+.good__info-more {
+    transition: all 400ms ease;
+    position: relative;
+
+ 
+    &:before{
+      position: absolute;
+      content: '';
+      width: 0%;
+      height: 100%;
+      background: rgba(255, 209, 62, 0.9);
+      top: 0;
+      left: 50%;
+      transition: all 0ms ease;
+    }
+    
+    &:hover{
+      color: #fff; 
+      box-shadow: none;
+      &:before{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 209, 62, 0.9);
+        top: 0;
+        left: 0%;
+        transition: all 400ms ease;
+      }
+    }
+  }
+
+
+@media (max-width: $desktop-big) {
+    .products {
+        width: 100%;
+        max-width: $desktop-big; 
+        &__content {
+            width: 100%;
+        }
+        .goods {
+            width: 95%;
+            &__content {
+                flex-wrap: wrap;
+                .good {
+                    &__title {
+                    }
+                    &__img {
+                    }
+                    &__inner {
+                        width: 70%;
+                        padding-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: $desktop-little) {
+    .products {
+        max-width: $desktop-little; 
+        .goods {
+            &__content {
+                flex-wrap: wrap;
+                .good {
+                    width: 45%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .products {
+        max-width: $tablet; 
+        .goods {
+            width: 90%;
+            &__content {
+                flex-wrap: wrap;
+                .good {
+                    width: 70%;
+                }
+            }
+        }
+        
+    }
+}
+
+
+@media (max-width: $phone) {
+    .products {
+        max-width: $phone; 
+        .goods {
+            &__content {
+                flex-wrap: wrap;
+                .good {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}

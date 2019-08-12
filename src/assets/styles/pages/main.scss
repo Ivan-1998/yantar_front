@@ -1,0 +1,437 @@
+.main {
+    &-slider {
+        // outline: $outline;
+        .slick-slider {
+            height: 550px;
+            background-color: #B0B0B0;
+            position: relative;
+        }
+        &-arrow {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            cursor: pointer;
+            top: calc(50% - 20px);
+            background: #7F7F7F url('/src/images/slick-arow.svg') center center no-repeat;
+            background-size: 10px 20px;
+            z-index: 2;
+            &-prev {
+                left: 10px;
+            }
+            &-next {
+                right: 10px;
+                transform: rotate(180deg);
+            }
+            &:focus {border: 1px solid transparent;}
+        }
+    }
+
+    .info {
+        &__content {
+            // outline: $outline;
+            width: 1100px;
+            margin: 0 auto;
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__inner {
+            // outline: $outline;
+            width: calc(31% - 30px);
+            height: 230px;
+            position: relative;
+            box-shadow: 9px 9px 18px rgba(0, 0, 0, 0.13);
+            border-radius: 8px;
+            padding-left: 30px;
+            cursor: pointer;
+            h2 {
+                // outline: $outline;
+                width: 60%;
+                color: #393939;
+                font-weight: 500;
+                font-size: 22px;
+                text-transform: uppercase;
+                margin: 20px 0;
+            }
+            p {
+                // outline: $outline;
+                width: 50%;
+                font-size: 14px;
+                color: #636363;
+                margin-bottom: 20px;
+                height: 35px;
+            }
+            img {
+                position: absolute;
+                height: auto;
+            }
+            .link-go {
+                width: 40%;
+            }
+            
+            // add width effect
+            &:hover {
+                .arrow {
+                    width: 60px;
+                }
+            }
+        }
+        &__item1 {
+            right: 20px;
+            bottom: 0;
+            width: 88px;
+        }
+        &__item2 {
+            right: 0px;
+            bottom: 0;
+            width: 150px;
+        }
+        &__item3 {
+            right: 5px;
+            bottom: -2px;
+            width: 165px;
+        }
+    }
+
+    &-our-slider {
+        padding: 40px 0 60px 0;
+        height: auto;
+        background: url('/src/images/main-slider-background.jpg') no-repeat;
+        background-size: cover;
+        .slick-slider {
+            width: 1280px;
+            margin: 0 auto;
+            max-width: $max-width;
+            .slick-dots {
+                bottom: -25px;
+            }
+        }
+        &-slide {
+            h3 {
+                width: 1100px;
+                margin: 0 auto;
+                color: $black;
+                font-size: 18px;
+                margin-bottom: -8px;
+            }
+            .link-more {
+                width: 1100px;
+                margin: 0 auto;
+                display: block;
+                text-align: right;
+                color: $black;
+                font-family: SFLight, Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            .wrapper-cards {
+                width: 1100px;
+                padding: 0 0 30px 0;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .card {  
+                    background: #fff;
+                    box-shadow: 7px 14px 19px rgba(0, 0, 0, 0.22);
+                    border-radius: 15px;
+                    color: $black;
+                    &:hover {
+                        .arrow {
+                            width: 60px;
+                        }
+                    }
+                    h4 {
+                        font-family: SFLight, Arial, Helvetica, sans-serif;
+                        font-weight: 100;
+                    }
+                }
+                &-products {
+                    .card {
+                        width: 48%;
+                        padding: 20px 0;
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-around;
+                        cursor: pointer;
+                        img {
+                            // outline: $outline;
+                            width: 25%;
+                        }
+                        &-info {
+                            // outline: $outline;
+                            width: 60%;
+                            h4 {
+                                font-size: 25px;
+                                font-weight: 100;
+                                position: relative;
+                                padding: 20px 0 10px 0;
+                                &::after {
+                                    content: '';
+                                    width: 10%;
+                                    height: 2px;
+                                    background: $black;
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                }
+                            }
+                            &-price {
+                                // outline: $outline;
+                                font-size: 20px;
+                                margin: 30px auto;
+                                p {
+                                    margin: 5px auto;
+                                    &.before {
+                                        color: #FF5F5F;
+                                        position: relative;
+                                        display: inline;
+                                        &:before {
+                                            content: '';
+                                            width: 100%;
+                                            height: 2px;
+                                            position: absolute;
+                                            background: #FF5F5F;
+                                            left: 0;
+                                            top: calc(50% - 1px);
+
+                                        }
+                                    }
+                                }
+                            }
+                            .link-go {
+                                width: 45%;
+                            }
+                        }
+                    }
+                }
+                &-news {
+                    .card {
+                        width: calc(30% - 20px);
+                        padding: 20px;
+                    }
+                    h4 {
+                        font-size: 25px;
+                        height: 60px;
+                    }
+                    p {
+                        font-size: 16px;
+                        margin: 15px 0;
+                        height: 95px;
+                    }
+                    .link-go {
+                        width: 47%;
+                    }
+                }
+                &-recipes {
+                    .card {
+                        width: 30%;
+                        overflow: hidden;
+                        .background {
+                            height: 120px;
+                            background-size: cover;
+                            background-position: center center;
+                        }
+                        .recipe-info {
+                            width: 90%;
+                            margin: 10px auto;
+                            p {
+                                font-size: 8px;
+                                text-transform: uppercase;
+                                margin: 5px 0;
+                            }
+                            h4 {
+                                font-size: 16px;
+                                height: 60px;
+                            }
+                            .link-go {
+                                margin: 10px 0 20px 0;
+                                width: 47%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .slick-dots {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30px;
+        li {
+            // outline: $outline;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 2px;
+            button {
+                cursor: pointer;
+                border-radius: 50%;
+                background: #5C4C1C;
+                width: 10px;
+                height: 10px;
+                transition: 0.4s;
+                padding: 0;
+                border: 1px solid transparent;
+                font-size: 0px;
+                &:before {content: ''!important;}
+            }
+            &.slick-active {
+                button {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $desktop-big) {
+    .main {
+        width: 100%;
+        margin: 0 auto;
+        max-width: $desktop-big; 
+        .info { 
+            &__content {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+            &__inner {
+                width: calc(30% - 20px);
+                margin: 25px 5px;
+                min-width: 350px;
+            }
+        }
+        
+        &-our-slider {
+            &-slide {
+                h3, .link-more {
+                    width: 100%;
+                    margin: 0 auto;
+                    max-width: $desktop-big;
+                }
+                h3 {
+                    margin-left: 25px;
+                }
+                .link-more {
+                    position: relative;
+                    right: 2%;
+                }
+                .wrapper-cards {   
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 100%;
+                    
+                    &-products, &-recipes, &-news {  
+                        .card {
+                            width: 500px;
+                            margin: 25px 5px;
+                        }
+                    }
+                }
+            } 
+        }  
+        .slick-slider {
+            width: 100%;
+            margin: 0 auto;
+            max-width: $desktop-big;      
+        }    
+    }
+}
+
+
+@media (max-width: $desktop-little) {
+    .main {
+        max-width: $desktop-little;
+        &-our-slider {
+            &-slide {
+                h3, .link-more {
+                    max-width: $desktop-little;
+                }
+            } 
+        }  
+        .slick-slider {
+            max-width: $desktop-little;      
+        }    
+    }
+}
+
+@media (max-width: $tablet) {
+    .main {
+        max-width: $tablet;
+        .info {
+            &__content {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            &__inner {
+                margin-bottom: 50px;
+            }
+        }
+        
+        &-our-slider {
+            &-slide {
+               
+                h3, .link-more {
+                    max-width: $tablet;
+                }
+                .link-more {
+                    display: none;
+                }
+                .wrapper-cards {   
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    
+                    &-products, &-recipes, &-news {  
+                        .card {
+                            width: calc(30% - 20px);
+                            min-width: 350px;
+                        }
+                    }
+                }
+            } 
+        }  
+        .slick-slider {
+            max-width: $tablet;      
+        }    
+    }
+}
+
+
+@media (max-width: $phone) {
+
+    .main {
+        max-width: $phone;
+
+        .slick-slider {
+            max-width: $phone;      
+        }  
+        &-our-slider {
+            &-slide {
+               
+                h3, .link-more {
+                    max-width: $phone;
+                }
+            } 
+        }    
+    }
+
+}
