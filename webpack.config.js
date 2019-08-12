@@ -1,9 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+const devMode = process.env.NODE_ENV !== 'production';
+// const Renderer = PrerenderSpaPlugin.PuppeteerRenderer;
 
 module.exports = {
   entry: './src/index.js',
@@ -15,11 +20,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          'style-loader', // creates style nodes from JS strings
-          'css-loader', // translates CSS into CommonJS
-          'sass-loader' // compiles Sass to CSS, using Node Sass by default
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -31,6 +41,11 @@ module.exports = {
         loader: 'eslint-loader',
         exclude: '/node_modules/'
       },
+      /* {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/
+      }, */
       {
         test: /\.(png|svg|jpg|gif|ico)$/,
         loader: 'file-loader',
@@ -64,18 +79,25 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      filename: 'index.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true
       }
     }),
+    new VueLoaderPlugin(),
     new webpack.ProvidePlugin({
       Vue: ['vue/dist/vue.esm.js', 'default'],
       $: 'jquery',
       jQuery: 'jquery',
       moment: 'moment'
     }),
-    new VueLoaderPlugin()
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+    })
   ]
 };
 
@@ -88,10 +110,27 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png)$/i,
+      pngquant: {
+        quality: '55-80'
+      }
+    }),
     new CopyWebpackPlugin([
       { from: './src/images', to: './src/images' },
       { from: './src/fonts', to: './src/fonts' }
     ]),
+    /* new PrerenderSpaPlugin({
+    staticDir: path.join(__dirname, '/dist'),
+    routes: ['/', '/registration', '/about', '/test', '/profile', '/recovery', '/contacts'],
+    renderer: new Renderer ({
+        inject: {
+            foo: 'bar'
+        },
+        headless: false,
+        renderAfterDocumentEvent: 'render-event'
+    })
+  }), */
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
