@@ -7,6 +7,7 @@ import Consumers from './Pages/Consumers/Consumers';
 import Contacts from './Pages/Contacts/Contacts';
 import Partners from './Pages/Partners/Partners';
 import Products from './Pages/Products/Products';
+import News from './Pages/News/News';
 
 Vue.use(VueRouter);
 
@@ -40,6 +41,11 @@ const routes = [
     path: '/products',
     name: 'products',
     component: Products
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: News
   }
 ];
 

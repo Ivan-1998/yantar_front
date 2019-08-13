@@ -2,14 +2,13 @@
   <div class="consumers">
     <div class="consumers__header">
       <div class="consumers__header__content">
-          <div class="consumers__header__text">
-              <h1>Потребители знакомы с нашими первоклассными продуктами с 1990 года!</h1>
-              <h2>Мы предлагаем только качественные продукты, произведенные из отборных семян подсолнечника</h2>
-          </div>
-          <img src="../../assets/images/maslo-girl.png" alt="потребители">
+        <div class="consumers__header__text">
+          <h1>Потребители знакомы с нашими первоклассными продуктами с 1990 года!</h1>
+          <h2>Мы предлагаем только качественные продукты, произведенные из отборных семян подсолнечника</h2>
+        </div>
+        
+        <div class="consumers__header__right"><img src="../../assets/images/maslo-girl.png" alt="потребители"></div>
       </div>
-
-      <div class="consumers__header__right"></div>
     </div>
 
     <div class="consumers__main">

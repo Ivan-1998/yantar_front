@@ -38,7 +38,8 @@
       }      
     }
     &__right {
-      position: relative;
+      position: absolute;
+      right: 0; bottom: 0;
       width: 420px;
       height: 420px;
       border-radius: 50%;
@@ -153,12 +154,16 @@
       &__content {
         width: 100%; height: auto;
         justify-content: center;
+        flex-direction: column;
       }
       &__text {
         width: 70%;
         margin: 30px 0;
         text-align: center;
       }   
+      &__right {
+        position: relative;
+      }
     }
     &__advantages {
       width: 100%;
@@ -185,7 +190,6 @@
   .partners {
     &__header {
       max-width: $desktop-little;
-      
     } 
     &__advantages {
       max-width: $desktop-little; 
