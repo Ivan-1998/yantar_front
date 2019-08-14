@@ -11,7 +11,7 @@
     <div class="good__inner">
       <div class="good__title">{{product.title}}</div>
       <div class="good__info-more">
-        <a href="#" class="link-go">
+        <a href="#" class="smooth-arrow smooth-arrow__black">
           <span>подробнее</span>
           <div class="arrow"><span></span></div>
         </a>

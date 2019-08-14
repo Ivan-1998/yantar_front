@@ -12,9 +12,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "core-js": "^2.6.5",
+    "jquery": "^3.4.1",
     "vue": "^2.6.10",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.1.2",
+    "vue-slick": "^1.1.15",
     "vue-truncate-filter": "^1.1.7",
     "vuex": "^3.1.1"
   },

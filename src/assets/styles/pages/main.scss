@@ -1,101 +1,129 @@
 .main {
+  // первый слайдер на главной
   &-slider {
-    // outline: $outline;
-    .slick-slider {
-      height: 550px;
-      background-color: #B0B0B0;
-      position: relative;
-    }
-    &-arrow {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid transparent;
-      cursor: pointer;
-      top: calc(50% - 20px);
-      background: #7F7F7F url('/src/images/slick-arow.svg') center center no-repeat;
-      background-size: 10px 20px;
-      z-index: 2;
-      &-prev {
-        left: 10px;
+    position: relative;
+    margin-bottom: 30px;
+    &__slide {
+      height: 450px;
+      &-bg {
+          background-image: url('~@/assets/images/slide-bg__yellow.png');
+        h1 {
+          color: $white;
+        }
       }
-      &-next {
-        right: 10px;
-        transform: rotate(180deg);
-      }
-      &:focus {border: 1px solid transparent;}
-    }
-  }
 
-  .info {
-    &__content {
-      // outline: $outline;
-      width: 1100px;
-      margin: 0 auto;
-      padding: 80px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    &__inner {
-      // outline: $outline;
-      width: calc(31% - 30px);
-      height: 230px;
-      position: relative;
-      box-shadow: 9px 9px 18px rgba(0, 0, 0, 0.13);
-      border-radius: 8px;
-      padding-left: 30px;
-      cursor: pointer;
-      h2 {
-        // outline: $outline;
-        width: 60%;
-        color: #393939;
-        font-weight: 500;
-        font-size: 22px;
-        text-transform: uppercase;
-        margin: 20px 0;
-      }
-      p {
-        // outline: $outline;
-        width: 50%;
-        font-size: 14px;
-        color: #636363;
-        margin-bottom: 20px;
-        height: 35px;
-      }
-      img {
-        position: absolute;
-        height: auto;
-      }
-      .link-go {
-        width: 40%;
-      }
-            
-      // add width effect
-      &:hover {
-        .arrow {
-          width: 60px;
+      & > div {
+        height: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .left, .right {
+          width: 40%;
+        }
+        .left {
+          margin-right: 30px;
+        }
+
+        h1 {
+          color: $black;
+          font-family: BebasRegular;
+          font-weight: 300;
+          font-size: 55px;
+        }
+
+        a.btn {
+          display: inline-block;
+          margin-top: 15px;
+        }
+        img {
+          width: 100%;
         }
       }
     }
-    &__item1 {
-      right: 20px;
-      bottom: 0;
-      width: 88px;
-    }
-    &__item2 {
-      right: 0px;
-      bottom: 0;
-      width: 150px;
-    }
-    &__item3 {
-      right: 5px;
-      bottom: -2px;
-      width: 165px;
+  }
+
+  // карточки с ссылками
+  &-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    .cart {
+      flex: 0 0 30%;
+      height: 230px;
+      padding: 35px;
+      box-sizing: border-box;
+      box-shadow: 9px 9px 18px rgba(0,0,0,.13);
+      background-color: $white;
+      border-radius: 8px;
+      position: relative;
+      &-content {
+        width: 60%;
+      }
+      &-img {
+        position: absolute;
+      }
+      &-link {
+        position: absolute;
+        width: 35%;
+        left: 35px;
+        bottom: 25px;
+        .arrow {width: 45px;}
+      }
+      // увеличение стрелки при наведении на карточку
+      &:hover {
+        .smooth-arrow {
+          .arrow {
+            width: 55px;
+          }
+        }
+      }
+      // позиционирование картинок
+      &:nth-child(1) {
+        .cart-img {
+          width: 91px;
+          bottom: -3.5px;
+          right: 8px;
+          img {
+            pointer-events: none;
+          }
+        }
+      }
+      &:nth-child(2) {
+        .cart-img {
+          width: 150px;
+          bottom: -3.5px;
+          right: 3px;
+        }
+      }
+      &:nth-child(3) {
+        .cart-img {
+          width: 160px;
+          bottom: -6px;
+          right: 3px;
+        }
+      }
+
+      h2 {
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        color: $black;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 14px;
+        color: #636363;
+        font-weight: 300;
+        line-height: 16px;
+      }
     }
   }
 
+  // потом отрефакторить
   &-our-slider {
     padding: 40px 0 60px 0;
     height: auto;
@@ -256,171 +284,5 @@
         }
       }
     }
-  }
-  .slick-dots {
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 30px;
-    li {
-      // outline: $outline;
-      cursor: pointer;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 2px;
-      button {
-        cursor: pointer;
-        border-radius: 50%;
-        background: #5C4C1C;
-        width: 10px;
-        height: 10px;
-        transition: 0.4s;
-        padding: 0;
-        border: 1px solid transparent;
-        font-size: 0px;
-        &:before {content: ''!important;}
-      }
-      &.slick-active {
-        button {
-          width: 15px;
-          height: 15px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: $desktop-big) {
-  .main {
-    width: 100%;
-    margin: 0 auto;
-    max-width: $desktop-big; 
-    .info { 
-      &__content {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-      }
-      &__inner {
-        width: calc(30% - 20px);
-        margin: 25px 5px;
-        min-width: 350px;
-      }
-    }  
-    &-our-slider {
-      &-slide {
-        h3, .link-more {
-          width: 100%;
-          margin: 0 auto;
-          max-width: $desktop-big;
-        }
-        h3 {
-          margin-left: 25px;
-        }
-        .link-more {
-          position: relative;
-          right: 2%;
-        }
-        .wrapper-cards {   
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: center;
-          width: 100%;
-          &-products, &-recipes, &-news {  
-            .card {
-              width: 500px;
-              margin: 25px 5px;
-            }
-          }
-        }
-      } 
-    }  
-    .slick-slider {
-      width: 100%;
-      margin: 0 auto;
-      max-width: $desktop-big;      
-    }    
-  }
-}
-
-@media (max-width: $desktop-little) {
-  .main {
-    max-width: $desktop-little;
-    &-our-slider {
-      &-slide {
-        h3, .link-more {
-          max-width: $desktop-little;
-        }
-      } 
-    }  
-    .slick-slider {
-      max-width: $desktop-little;      
-    }    
-  }
-}
-
-@media (max-width: $tablet) {
-  .main {
-    max-width: $tablet;
-    .info {
-      &__content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-      &__inner {
-        margin-bottom: 50px;
-      }
-    }
-    &-our-slider {
-      &-slide {
-        h3, .link-more {
-          max-width: $tablet;
-        }
-        .link-more {
-          display: none;
-        }
-        .wrapper-cards {   
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          &-products, &-recipes, &-news {  
-            .card {
-              width: calc(30% - 20px);
-              min-width: 350px;
-            }
-          }
-        }
-      } 
-    }  
-    .slick-slider {
-      max-width: $tablet;      
-    }    
-  }
-}
-
-@media (max-width: $phone) {
-  .main {
-    max-width: $phone;
-    .slick-slider {
-      max-width: $phone;      
-    }  
-    &-our-slider {
-      &-slide {
-        h3, .link-more {
-           max-width: $phone;
-        }
-      } 
-    }    
   }
 }
