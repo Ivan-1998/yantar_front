@@ -25,7 +25,6 @@
   ],
   "rules": {
     "indent": ["error", 2],
-    "linebreak-style": ["error", "windows"],
     "camelcase": [0, {"properties": "never"}],
     "comma-dangle": ["error", "never"],
     "import/no-unresolved": "off",

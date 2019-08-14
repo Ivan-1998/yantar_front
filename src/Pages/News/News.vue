@@ -1,35 +1,38 @@
 <template>
-  <div class="news">
-    <div class="news__content">
-      <div class="news__inner">
-        <div class="news__title">Список новостей</div>
-        <div class="news__content">
-          <New v-for="New in news" :key="New.id"/>
-        </div>
-      </div>
-    </div>
+  <div class="container news">
+    <h1 class="page-title">{{pageTitle}}</h1>
+    <NewsNew v-for="item in news" :key="item.id" :item="item" />
   </div>
 </template>
 
 <script>
-import New from './Components/New';
+import NewsNew from './Components/NewsNew';
+import MixinCommonMethods from '../../Mixins/MixinCommonMethods';
 
 export default ({
   name: 'News',
-  components: {New},
+  mixins: [MixinCommonMethods],
+  components: {
+    NewsNew
+  },
   data() {
     return {
       news: []
     };
   },
-  methods: {
-    getNews() {
-      this.$http.get('api/news/')
-        .then(response => this.news = response.body)
-    }
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.getNews();
+    })
   },
   mounted() {
-    this.getNews();
+    this.$store.commit('setPage', {title: 'Список новостей'});
+  },
+  methods: {
+    getNews() {
+      this.$http.get('api/news')
+        .then(response => this.news = response.body)
+    }
   }
 });
 </script>

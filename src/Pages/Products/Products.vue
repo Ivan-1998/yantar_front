@@ -29,14 +29,16 @@ export default ({
       products: []
     };
   },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.getProducts();
+    })
+  },
   methods: {
     getProducts() {
       this.$http.get('api/marketplace/halva/')
         .then(response => this.products = response.body)
     }
-  },
-  mounted() {
-    this.getProducts();
   }
 });
 </script>
