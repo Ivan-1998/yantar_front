@@ -9,7 +9,9 @@
     <div class="about__main">
       <div class="about__main__content">
         <div class="item">
-          <p>In purus quam, fringilla at est a, porttitor volutpat felis. Sed eleifend laoreet ornare. Fusce ut laoreet odio, sed posuere urna. Ut pretium dui id eros consequat pulvinar. Sed sollicitudin mattis volutpat. Phasellus aliquam tincidunt velit sit amet tempor. Nulla iaculis iaculis orci nec fermentum. Nulla iaculis elementum enim, vel efficitur eros lacinia non. Sed tempus, nulla eu cursus commodo, magna ligula varius nibh, et blandit neque arcu in elit.</p>
+          <p>Наше предприятие уже 20 лет на рынке Казахстана. Маслозавод «Янтарь» начал выпуск подсолнечного масла с октября 1999 года. А в 2013 году на прилавках магазинов появились ядро жаренное подсолнечное и семечки жареные, а также халва подсолнечная. 
+            При производстве мы используем только цельные ядра отборных семечек. Ядро подсолнечника богато полезными веществами: витамины А и Е, фолиевая кислота, магний, калий, фосфор. 
+          </p>
         </div>
 
         <div class="item">
@@ -21,11 +23,20 @@
         </div>
 
         <div class="item">
-          <p>Mauris fringilla finibus risus, in tempor mauris malesuada ac. Morbi sit amet lectus est. Nulla vehicula maximus gravida. Ut sit amet quam rhoncus, rhoncus nisl vel, laoreet purus.</p>
+          <p>За это время мы зарекомендовали себя, как успешно развивающаяся компания, которая ценит в первую очередь качество и натуральность продукта.</p>
         </div>
           
         <div class="item">
-          <p>Vivamus non ultricies velit. Nullam faucibus vehicula felis, quis suscipit ligula ultrices quis. Aliquam sapien purus, pharetra blandit consequat et, venenatis sit amet velit. Vestibulum quis libero purus. Sed rhoncus nisl id velit posuere egestas. Curabitur consectetur nisl quis lorem iaculis mollis. Aenean vitae neque aliquam, facilisis ex et, aliquet quam. Praesent vitae lorem quis nulla dapibus tristique ut ut justo.</p>
+          <p>
+            Наш ассортимент на сегодняшний день:<br>
+            <ul class="products-list">
+              <li>Халва воздушная – В процессе вакуумирования халва становится легкой и воздушной.</li>
+              <li>Халва подсолнечная –  При приготовлении халвы мы используем только цельное ядро подсолнечника!</li>
+              <li>Масло подсолнечное нерафинированное 1 сорта богато витаминами А и Е и биологически активными веществами, поэтому его рекомендуется добавлять в салаты, маринады и использовать при приготовлении других блюд.</li>
+              <li>Семечки крупные и отборные. Благодаря уникальному американскому оборудованию наши семечки крупные и чистые! Домашний вкус как со сковороды!</li>
+              <li>Ядро подсолнечное - Правильность отбора, сушки и обжарки семян являются основными показателями качества произведенного продукта. Ядро подсолнечника богато полезными веществами: витамины А и Е, фолиевая кислота, магний, калий, фосфор.  Их можно использовать при приготовлении диетических и экзотических блюд </li>
+            </ul>
+          </p>
         </div>
       </div>
 
@@ -52,3 +63,14 @@ export default ({
   name: 'About'
 });
 </script>
+
+<style lang="scss">
+  .products-list {
+    margin-top: 5px;
+    li {
+      list-style-type: disc;
+      padding: 5px 0;
+      margin-left: 15px;
+    }
+  }
+</style>
