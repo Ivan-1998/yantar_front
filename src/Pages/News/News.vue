@@ -15,6 +15,9 @@ export default ({
   components: {
     NewsNew
   },
+  mounted() {
+    this.$store.commit('setPage', {title: 'Список новостей'});
+  },
   data() {
     return {
       news: []
@@ -24,9 +27,6 @@ export default ({
     next(vm => {
       vm.getNews();
     })
-  },
-  mounted() {
-    this.$store.commit('setPage', {title: 'Список новостей'});
   },
   methods: {
     getNews() {

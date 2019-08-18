@@ -1,4 +1,4 @@
-<template>
+ <template>
   <footer class="footer">
     <div class="footer__content">
       <div class="footer__inner">
@@ -9,9 +9,9 @@
             <li><router-link tag="a" :to="{name: 'partners'}">Партнерам</router-link></li>
         </ul>
         <ul class="footer__item">
-            <li><router-link tag="a" :to="{name: 'about'}">О нас</router-link></li>
-            <li><router-link tag="a" :to="{name: 'contacts'}">Контакты</router-link></li>
-            <li><a href="#">Правовая информация</a></li>
+            <li><router-link :to="{name: 'about'}">О нас</router-link></li>
+            <li><router-link :to="{name: 'contacts'}">Контакты</router-link></li>
+            <li><router-link :to="{name: 'news'}">Новости</router-link></li>
             <li><a href="#">Политика конфиденциальности</a></li>
         </ul>
         <ul>
