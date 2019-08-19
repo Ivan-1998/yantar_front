@@ -1,0 +1,288 @@
+.main {
+  // первый слайдер на главной
+  &-slider {
+    position: relative;
+    margin-bottom: 30px;
+    &__slide {
+      height: 450px;
+      &-bg {
+          background-image: url('~@/assets/images/slide-bg__yellow.png');
+        h1 {
+          color: $white;
+        }
+      }
+
+      & > div {
+        height: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .left, .right {
+          width: 40%;
+        }
+        .left {
+          margin-right: 30px;
+        }
+
+        h1 {
+          color: $black;
+          font-family: BebasRegular;
+          font-weight: 300;
+          font-size: 55px;
+        }
+
+        a.btn {
+          display: inline-block;
+          margin-top: 15px;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // карточки с ссылками
+  &-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    .cart {
+      flex: 0 0 30%;
+      height: 230px;
+      padding: 35px;
+      box-sizing: border-box;
+      box-shadow: 9px 9px 18px rgba(0,0,0,.13);
+      background-color: $white;
+      border-radius: 8px;
+      position: relative;
+      &-content {
+        width: 60%;
+      }
+      &-img {
+        position: absolute;
+      }
+      &-link {
+        position: absolute;
+        width: 35%;
+        left: 35px;
+        bottom: 25px;
+        .arrow {width: 45px;}
+      }
+      // увеличение стрелки при наведении на карточку
+      &:hover {
+        .smooth-arrow {
+          .arrow {
+            width: 55px;
+          }
+        }
+      }
+      // позиционирование картинок
+      &:nth-child(1) {
+        .cart-img {
+          width: 91px;
+          bottom: -3.5px;
+          right: 8px;
+          img {
+            pointer-events: none;
+          }
+        }
+      }
+      &:nth-child(2) {
+        .cart-img {
+          width: 150px;
+          bottom: -3.5px;
+          right: 3px;
+        }
+      }
+      &:nth-child(3) {
+        .cart-img {
+          width: 160px;
+          bottom: -6px;
+          right: 3px;
+        }
+      }
+
+      h2 {
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        color: $black;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 14px;
+        color: #636363;
+        font-weight: 300;
+        line-height: 16px;
+      }
+    }
+  }
+
+  // потом отрефакторить
+  &-our-slider {
+    padding: 40px 0 60px 0;
+    height: auto;
+    background: url('/src/images/main-slider-background.jpg') no-repeat;
+    background-size: cover;
+    .slick-slider {
+      width: 1280px;
+      margin: 0 auto;
+      max-width: $max-width;
+      .slick-dots {
+        bottom: -25px;
+      }
+    }
+    &-slide {
+      h3 {
+        width: 1100px;
+        margin: 0 auto;
+        color: $black;
+        font-size: 18px;
+        margin-bottom: -8px;
+      }
+      .link-more {
+        width: 1100px;
+        margin: 0 auto;
+        display: block;
+        text-align: right;
+        color: $black;
+        font-family: SFLight, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .wrapper-cards {
+        width: 1100px;
+        padding: 0 0 30px 0;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .card {  
+          background: #fff;
+          box-shadow: 7px 14px 19px rgba(0, 0, 0, 0.22);
+          border-radius: 15px;
+          color: $black;
+          &:hover {
+            .arrow {
+              width: 60px;
+            }
+          }
+          h4 {
+            font-family: SFLight, Arial, Helvetica, sans-serif;
+            font-weight: 100;
+          }
+        }
+        &-products {
+          .card {
+            width: 48%;
+            padding: 20px 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            cursor: pointer;
+            img {
+              // outline: $outline;
+              width: 25%;
+            }
+            &-info {
+              // outline: $outline;
+              width: 60%;
+              h4 {
+                font-size: 25px;
+                font-weight: 100;
+                position: relative;
+                padding: 20px 0 10px 0;
+                &::after {
+                  content: '';
+                  width: 10%;
+                  height: 2px;
+                  background: $black;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                }
+              }
+              &-price {
+                // outline: $outline;
+                font-size: 20px;
+                margin: 30px auto;
+                p {
+                  margin: 5px auto;
+                  &.before {
+                    color: #FF5F5F;
+                    position: relative;
+                    display: inline;
+                    &:before {
+                      content: '';
+                      width: 100%;
+                      height: 2px;
+                      position: absolute;
+                      background: #FF5F5F;
+                      left: 0;
+                      top: calc(50% - 1px);
+
+                    }
+                  }
+                }
+              }
+              .link-go {
+                width: 45%;
+              }
+            }
+          }
+        }
+        &-news {
+          .card {
+            width: calc(30% - 20px);
+            padding: 20px;
+          }
+          h4 {
+            font-size: 25px;
+            height: 60px;
+          }
+          p {
+            font-size: 16px;
+            margin: 15px 0;
+            height: 95px;
+          }
+          .link-go {
+            width: 47%;
+          }
+        }
+        &-recipes {
+          .card {
+            width: 30%;
+            overflow: hidden;
+            .background {
+              height: 120px;
+              background-size: cover;
+              background-position: center center;
+            }
+            .recipe-info {
+              width: 90%;
+              margin: 10px auto;
+              p {
+                font-size: 8px;
+                text-transform: uppercase;
+                margin: 5px 0;
+              }
+              h4 {
+                font-size: 16px;
+                height: 60px;
+              }
+              .link-go {
+                margin: 10px 0 20px 0;
+                width: 47%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

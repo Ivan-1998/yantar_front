@@ -1,0 +1,38 @@
+<template>
+  <router-link :to="{name: 'new', params: {new_id: item.id}}" class="new">
+    <div class="new-img"
+         :style="`background-image: url('http://sibtiger.com:3000${item.images[0]}')`">
+    </div>
+
+    <div class="new-content">
+      <p class="new-title">{{item.title}}</p>
+      <p class="new-description">{{item.description | truncate(250)}}</p>
+
+      <div class="new-link">
+        <SmoothArrow :to="{name: 'new', params: {new_id: item.id}}" />
+      </div>
+      
+    </div>
+
+  </router-link>
+</template>
+
+<script>
+import SmoothArrow from '../../../Components/UI/SmoothArrow';
+
+export default {
+  name: 'New',
+  components: {
+    SmoothArrow
+  },
+  props: {
+    item: {
+      type: Object,
+      default: () => {}
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+</style>
