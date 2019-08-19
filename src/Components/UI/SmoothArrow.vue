@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{name: to}"
+  <router-link :to="to"
                class="smooth-arrow"
                :class="className"
                @click.native="clickHandler"> 
@@ -14,8 +14,7 @@ export default {
   name: 'SmoothArrow',
   props: {
     to: {
-      type: String,
-      default: () => ''
+      type: Object
     },
     text: {
       type: String,
@@ -32,7 +31,6 @@ export default {
   },
   methods: {
     clickHandler() {
-      // eslint-disable-next-line no-console
       if (this.linkModal) {
         return false;
       } else return true;

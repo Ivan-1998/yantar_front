@@ -16,7 +16,7 @@ export default ({
     NewsNew
   },
   mounted() {
-    this.$store.commit('setPage', {title: 'Список новостей'});
+    this.$store.commit('setPage', {title: 'Наши новости'});
   },
   data() {
     return {

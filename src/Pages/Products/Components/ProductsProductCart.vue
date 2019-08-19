@@ -8,7 +8,7 @@
     <div class="product-inner">
       <h4 class="product-title">{{product.title}}</h4>
       <div class="product-link">
-        <SmoothArrow :text="'Подробнее'" :linkModal="true" />
+        <SmoothArrow :to="{}" :text="'Подробнее'" :linkModal="true" />
       </div>
     </div>    
   </div>

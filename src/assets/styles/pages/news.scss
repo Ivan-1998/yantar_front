@@ -1,11 +1,89 @@
-.news {
-  &__content {
-    
+.new {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  &:not(:last-child) {
+    margin-bottom: 40px;
   }
-  &__inner {
 
+  &-img {
+    flex: 0 0 255px;
+    height: 140px;
+    margin-right: 30px;
+    background-color: #C4C4C4;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
-  &__title {
-    
+
+  &-content {
+    flex: 0 0 calc(100% - 255px);
+    position: relative;
+    height: 140px;
+  }
+
+  &-title {
+    margin-bottom: 7px;
+    color: #555555;
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  &-description {
+    line-height: 19px;
+    color: #8A8A8A;
+    line-height: 19px;
+    font-size: 16px;
+  }
+
+  &-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    .arrow {
+      width: 50px;
+    }
+  }
+
+  &:hover {
+    .arrow {
+      width: 70px;
+    }
+  }
+}
+
+.new-page {
+  color: $black;
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    .img {
+      flex: 0 0 255px;
+      height: 140px;
+      margin-right: 30px;
+      background-color: #C4C4C4;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .inscription {
+      h2 {
+        margin-bottom: 15px;  
+      }
+      .date {
+        padding: 7px 10px;
+        font-size: 14px;
+        background-color: #FFE461;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  &__content {
+    font-size: 15px;
+    line-height: 20px;
   }
 }

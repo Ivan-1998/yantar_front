@@ -8,6 +8,7 @@ import Contacts from './Pages/Contacts/Contacts';
 import Partners from './Pages/Partners/Partners';
 import Products from './Pages/Products/Products';
 import News from './Pages/News/News';
+import New from './Pages/News/New';
 
 Vue.use(VueRouter);
 
@@ -46,6 +47,11 @@ const routes = [
     path: '/news',
     name: 'news',
     component: News
+  },
+  {
+    path: '/news/:new_id',
+    name: 'new',
+    component: New
   }
 ];
 

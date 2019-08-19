@@ -9,7 +9,7 @@
         <h2>{{cart.name}}</h2>
         <p>{{cart.text}}</p>
 
-        <SmoothArrow :to="cart.link" class="cart-link" />
+        <SmoothArrow :to="{name: cart.link}" class="cart-link" />
       </div>
       <div class="cart-img">
         <img v-if="index === 0" src="../../../assets/images/info_link1.png" alt="Перейти">
