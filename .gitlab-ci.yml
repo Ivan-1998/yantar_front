@@ -6,24 +6,8 @@ cache:
     - node_modules/
 
 stages:
-  - setup
-  - test
   - build
   - deploy
-
-setup:
-  stage: setup
-  script:
-    - npm ci
-  only:
-    - master
-
-test:
-  stage: test
-  script:
-    - npm run test:unit
-  only:
-    - master
 
 build:
   stage: build
