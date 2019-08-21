@@ -1,26 +1,58 @@
 <template>
-  <header class="header header-fixed">
-    <div class="container header-content">
-      <router-link :to="{name: 'main'}" class="header-logo">
-        <img src="../../assets/images/logo.png">
-      </router-link>
+  <div>
+    <header class="header header-fixed">
+      <div class="container header-content">
+        <router-link :to="{name: 'main'}" class="header-logo">
+          <img src="../../assets/images/logo.png">
+        </router-link>
 
-      <ul class="header-links">
-        <li><router-link :to="{name: 'products'}">Продукция</router-link></li>
-        <li><router-link :to="{name: 'consumers'}">Потребителям</router-link></li>
-        <li><router-link :to="{name: 'partners'}">Партнерам</router-link></li>
-        <li><router-link :to="{name: 'about'}">О нас</router-link></li>
-        <li><router-link :to="{name: 'contacts'}">Контакты</router-link></li>
-      </ul>
-    </div>
-  </header>
+        <ul class="header-links">
+          <li v-for="(link, index) in links" :key="index">
+            <router-link :to="{name: link.routerName}">{{link.text}}</router-link>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <HeaderMobile v-if="headerMobileShow" :links="links" />
+  </div>
+
 </template>
 
 <script>
+import HeaderMobile from './HeaderMobile';
+
 export default ({
   name: 'Header',
-  mounted() {
-
+  components: {
+    HeaderMobile
+  },
+  data() {
+    return {
+      links: [
+        {
+          routerName: 'products',
+          text: 'Продукция'
+        },
+        {
+          routerName: 'consumers',
+          text: 'Потребителям'
+        },
+        {
+          routerName: 'partners',
+          text: 'Партнерам'
+        },
+        {
+          routerName: 'about',
+          text: 'О нас'
+        },
+        {
+          routerName: 'contacts',
+          text: 'Контакты'
+        }
+      ],
+      headerMobileShow: false
+    };
   }
 });
 </script>

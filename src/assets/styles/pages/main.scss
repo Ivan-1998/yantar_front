@@ -48,11 +48,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
   
     .cart {
       flex: 0 0 30%;
       height: 230px;
       padding: 35px;
+      margin-bottom: 30px;
       box-sizing: border-box;
       box-shadow: 9px 9px 18px rgba(0,0,0,.13);
       background-color: $white;
@@ -102,6 +104,28 @@
           width: 160px;
           bottom: -6px;
           right: 3px;
+        }
+      }
+      &:nth-child(4) {
+        overflow: hidden;
+        .cart-img {
+          width: 160px;
+          bottom: -4px;
+          right: -36px;
+        }
+      }
+      &:nth-child(5) {
+        .cart-img {
+          width: 160px;
+          bottom: 0px;
+          right: 0px;
+        }
+      }
+      &:nth-child(6) {
+        .cart-img {
+          width: 160px;
+          bottom: 0px;
+          right: -8px;
         }
       }
 
