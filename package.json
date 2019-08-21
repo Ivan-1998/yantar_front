@@ -18,6 +18,7 @@
     "vue-router": "^3.1.2",
     "vue-slick": "^1.1.15",
     "vue-truncate-filter": "^1.1.7",
+    "vue-yandex-maps": "^0.8.14",
     "vuex": "^3.1.1"
   },
   "devDependencies": {
