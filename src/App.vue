@@ -2,9 +2,9 @@
   <div id="app">
     <Header />
 
-    <router-view></router-view>
+    <router-view class="main-content"></router-view>
     
-    <Feedback />
+    <Feedback v-if="$route.meta.showFeedback" />
     <Footer />
   </div>
 </template>

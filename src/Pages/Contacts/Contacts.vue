@@ -2,15 +2,11 @@
   <div class="contacts">
     <div class="contacts__inner">
       <yandex-map 
-        :settings="settings" 
         :coords="[50.0055,82.578]" 
         zoom="16" 
         style="width: 100%; height: 100%; position: absolute;" 
         :controls="['trafficControl','typeSelector','rulerControl','fullscreenControl']" 
-        options.float="none"
-        options.position.right='auto'
-        map-type="map" 
-        @map-was-initialized="initHandler" > 
+      > 
 
         <ymap-marker 
           marker-id="1" 
@@ -25,22 +21,18 @@
         <div class="contacts__left__title">контакты</div>
 
         <div class="contacts__left__info">
-          <p>По вопросам сотрудничества</p>
+          <p>По вопросам сотрудничества:</p>
           <p>
             <font-awesome-icon :icon="['fas', 'phone-alt']"  />   
-            <span>8 (800) 555-35-35</span>
-          </p>
-          <p>
-            <font-awesome-icon :icon="['fas', 'phone-alt']"  />
-            <span>8 (800) 555-35-35</span>
+            <a :href="`tel:${phoneHref}`">{{phone}}</a>
           </p>
           <p>
             <font-awesome-icon :icon="['fas', 'envelope']"  />
-            <span>info@gtrans-54.ru</span>
+            <a :href="`mailto:${email}`">{{email}}</a>
           </p>
           <p>
             <font-awesome-icon :icon="['fas', 'map-marker-alt']"  />
-            <span>г. Усть-Каменогорск, ул. Грейдерная 1/1</span>
+            <a>{{adress}}</a>
           </p>
         </div>
       </div>

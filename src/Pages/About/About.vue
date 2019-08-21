@@ -49,8 +49,6 @@
           <div class="right">
             <a href="#"><img src="../../assets/images/certificate1.jpg" alt="Сертификат"></a>
             <a href="#"><img src="../../assets/images/certificate2.jpg" alt="Сертификат"></a>
-            <a href="#"><img src="../../assets/images/certificate.png" alt="Сертификат"></a>
-            <a href="#"><img src="../../assets/images/certificate.png" alt="Сертификат"></a>
           </div>
         </div>
       </div>

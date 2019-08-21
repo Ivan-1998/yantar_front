@@ -15,10 +15,9 @@
             <li><a href="#">Политика конфиденциальности</a></li>
         </ul>
         <ul>
-            <li><a href="#">info@yantar.kz</a></li>
-            <li><a href="#">+7(7232)500-136</a></li>
-            <li>г. Усть-Каменогорск</li>
-            <li>ул. Грейдерная 1/1</li>
+            <li><a :href="`mailto:${email}`">{{email}}</a></li>
+            <li><a :href="`tel:${phoneHref}`">{{phone}}</a></li>
+            <li>{{adress}}</li>
         </ul>
       </div>
     </div>

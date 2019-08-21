@@ -23,6 +23,11 @@ Vue.use(VueTruncate);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.http.options.root = 'http://sibtiger.com:3000';
 Vue.config.productionTip = false;
+
+Vue.prototype.phone = '+7(800)555-35-35';
+Vue.prototype.phoneHref = '+78005553535';
+Vue.prototype.email = 'info@yantar.com';
+Vue.prototype.adress = 'г. Усть-Каменогорск, ул. Грейдерная 1/1';
  
 
 library.add();

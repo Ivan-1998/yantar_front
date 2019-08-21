@@ -16,22 +16,34 @@ const routes = [
   {
     path: '/',
     name: 'main',
-    component: Main
+    component: Main,
+    meta: {
+      showFeedback: false
+    }
   },
   {
     path: '/about',
     name: 'about',
-    component: About
+    component: About,
+    meta: {
+      showFeedback: true
+    }
   },
   {
     path: '/consumers',
     name: 'consumers',
-    component: Consumers
+    component: Consumers,
+    meta: {
+      showFeedback: true
+    }
   },
   {
     path: '/contacts',
     name: 'contacts',
-    component: Contacts
+    component: Contacts,
+    meta: {
+      showFeedback: true
+    }
   },
   {
     path: '/partners',
@@ -41,17 +53,26 @@ const routes = [
   {
     path: '/products',
     name: 'products',
-    component: Products
+    component: Products,
+    meta: {
+      showFeedback: true
+    }
   },
   {
     path: '/news',
     name: 'news',
-    component: News
+    component: News,
+    meta: {
+      showFeedback: true
+    }
   },
   {
     path: '/news/:new_id',
     name: 'new',
-    component: New
+    component: New,
+    meta: {
+      showFeedback: true
+    }
   }
 ];
 
