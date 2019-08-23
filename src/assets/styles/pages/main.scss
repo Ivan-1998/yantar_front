@@ -370,6 +370,15 @@
 @media (max-width: $desktop-little) {
   .main {
     max-width: $desktop-little;
+    &-slider {
+      &__slide {
+        & > div {
+          h1 {
+            font-size: 40px;
+          }
+        }
+      }
+    } 
     &-links {
       max-width: $desktop-little;
       .cart {
@@ -377,7 +386,6 @@
       }
     }
   }
-  
 }
 
 @media (max-width: $tablet) {
@@ -388,12 +396,16 @@
         & > div {
           flex-direction: column;
           .left, .right {
-            width: 50%;
+            width: 55%;
             margin: 10px 0;
             text-align: center;
           }
           h1 {
-            font-size: 35px;
+            font-size: 30px;
+          }
+          img {
+            width: 60%;
+            margin: 10px auto;
           }
         }
       }
