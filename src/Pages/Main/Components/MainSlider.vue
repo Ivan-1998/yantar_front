@@ -73,6 +73,8 @@ export default {
 </script>
 
 <style lang="scss">
+  // includes
+  @import '../../../assets/styles/includes/variables.scss';
   @import '../../../assets/styles/libraries/slick.scss';
 
   .slick {
@@ -97,4 +99,33 @@ export default {
       }
     }
   }
+
+@media (max-width: $desktop-big) {
+  .slick {
+    &-arrows {
+      width: 100%;
+      max-width: $desktop-big;  
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: $desktop-little) {
+  .slick {
+    &-arrows {
+      max-width: $desktop-little;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .slick {
+    &-arrows {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $phone) {
+}
 </style>
