@@ -36,6 +36,10 @@ select:focus {outline: none;}
   align-content: center;
 }
 
+.font-bold {
+  font-weight: 600;
+}
+
 .main-content {
   margin-top: 90px !important;
 }
@@ -52,5 +56,137 @@ select:focus {outline: none;}
     font-size: 24px;
     color: #3B4256;
     margin-bottom: 40px;
+  }
+}
+
+.landing {
+  &-header {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #fff;
+    color: $black;
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      line-height: 35px;
+    }
+    p {
+      color: #373737;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    & > div:first-child {
+      width: 40%;
+    }
+    & > div:last-child {  
+      img {
+        width: 370px;
+      }
+    }
+  }
+
+  &-content {
+    margin-top: -200px;
+    padding-top: 275px;
+    padding-bottom: 30px;
+    background-image: url('~@/assets/images/landing-bg.png');
+    background-position: top center;
+    background-size: 100% 100%;
+  }
+}
+
+
+
+@media (max-width: $desktop-big) {
+  .container {
+    width: 900px;
+  }
+}
+
+@media (max-width: $desktop-little) {
+  .container {
+    width: 90%;
+  }
+
+  .landing {
+    &-header {
+      h1 {
+        font-size: 26px;
+        line-height: 33px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      & > div:first-child {
+        width: 60%;
+      }
+      & > div:last-child {  
+        img {
+          width: 300px;
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .landing {
+    &-header {
+      flex-wrap: wrap-reverse;
+
+      & > div:first-child {
+        width: 100%;
+      }
+
+      & > div:last-child {  
+        img {
+          width: 225px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-content {
+      background-image: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+@media (max-width: $phone) {
+  .container {
+    padding: 20px 0;
+  }
+  
+  .main-content {
+    margin-top: 70px !important;
+  }
+
+  .landing {
+    &-header {
+      h1 {
+        font-size: 22px;
+        line-height: 28px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      & > div:last-child {  
+        img {
+          width: 150px;
+        }
+      }
+    }
   }
 }

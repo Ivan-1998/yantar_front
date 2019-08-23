@@ -1,7 +1,10 @@
 <template>
   <div class="header-mobile">
     <ul class="header-mobile__links">
-      <li v-for="(link, index) in links" :key="index">
+      <li v-for="(link, index) in links"
+          :key="index"
+          @click="$parent.mobileMenuHandler()"
+      >
         <router-link :to="{name: link.routerName}">{{link.text}}</router-link>
       </li>
     </ul> 

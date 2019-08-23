@@ -1,22 +1,27 @@
 <template>
-  <div>
-    <header class="header header-fixed">
-      <div class="container header-content">
-        <router-link :to="{name: 'main'}" class="header-logo">
-          <img src="../../assets/images/logo.png">
-        </router-link>
+  <header class="header header-fixed">
+    <div class="container header-content">
+      <router-link :to="{name: 'main'}" class="header-logo">
+        <img src="../../assets/images/logo.png">
+      </router-link>
 
-        <ul class="header-links">
-          <li v-for="(link, index) in links" :key="index">
-            <router-link :to="{name: link.routerName}">{{link.text}}</router-link>
-          </li>
-        </ul>
+      <div class="header-burger" :class="{'open': mobileShow}" @click="mobileMenuHandler">
+        <div>
+          <span></span><span></span><span></span>
+        </div>
       </div>
-    </header>
+      <transition name="fade">
+        <HeaderMobile v-if="mobileShow" :links="links" />
+      </transition>
+      
 
-    <HeaderMobile v-if="headerMobileShow" :links="links" />
-  </div>
-
+      <ul class="header-links">
+        <li v-for="(link, index) in links" :key="index">
+          <router-link :to="{name: link.routerName}">{{link.text}}</router-link>
+        </li>
+      </ul>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -51,8 +56,13 @@ export default ({
           text: 'Контакты'
         }
       ],
-      headerMobileShow: false
+      mobileShow: false
     };
+  },
+  methods: {
+    mobileMenuHandler() {
+      this.mobileShow = !this.mobileShow;
+    }
   }
 });
 </script>
