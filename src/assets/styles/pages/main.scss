@@ -310,3 +310,58 @@
     }
   }
 }
+
+@media (max-width: $desktop-big) {
+  .main {
+    width: 100%;
+    margin: 0 auto;
+    max-width: $desktop-big;
+    &-slider {
+
+    } 
+    &-links {
+      width: 95%;
+      margin: 0 auto;
+      max-width: $desktop-big;
+    } 
+  }
+  
+}
+
+@media (max-width: $desktop-little) {
+  .main {
+    max-width: $desktop-little;
+    &-slider {
+
+    } 
+    &-links {
+      max-width: $desktop-little;
+    }
+  }
+  
+}
+
+@media (max-width: $tablet) {
+  .main {
+    max-width: $tablet;
+    &-slider {
+
+    } 
+    &-links {
+      max-width: $tablet;
+    }
+  }
+ 
+}
+
+@media (max-width: $phone) {
+  .main {
+    max-width: $phone;
+    &-slider {
+
+    } 
+    &-links {
+      max-width: $phone;
+    }
+  }
+}

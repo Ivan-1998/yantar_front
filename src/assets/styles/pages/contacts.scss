@@ -72,9 +72,6 @@
 
 @media (max-width: $phone) {
   .contacts {
-    max-width: $phone;  
-    &__left {
-      width: 100%;
-    }
+    max-width: $phone;
   }
 }
