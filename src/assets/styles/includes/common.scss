@@ -54,3 +54,9 @@ select:focus {outline: none;}
     margin-bottom: 40px;
   }
 }
+
+@media (max-width: $desktop-little) {
+  .container {
+    width: 90%;
+  }
+}
