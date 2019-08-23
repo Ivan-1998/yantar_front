@@ -77,12 +77,6 @@ export default {
         } 
       ]
     };
-  },
-  methods: {
-    setSrcImage(index) {
-      return `../../../assets/images/info_link${index + 1}.png`;
-    }
   }
-
 }
 </script>
