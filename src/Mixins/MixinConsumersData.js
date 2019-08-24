@@ -1,3 +1,4 @@
+import ImgHeader from '../assets/images/consumers-header.png';
 import ImgMaslo from '../assets/images/consumers-maslo.png';
 import ImgSeeds from '../assets/images/consumers-seeds.png';
 import ImgHalva from '../assets/images/consumers-halva.png';
@@ -5,6 +6,9 @@ import ImgHalva from '../assets/images/consumers-halva.png';
 export default {
   data() {
     return {
+      title: 'Потребители знакомы с нашими первоклассными продуктами с 1990 года!',
+      subtitle: 'Мы предлагаем только качественные продукты, произведенные из отборных семян подсолнечника',
+      img: ImgHeader,
       items: [
         {
           titleMain: 'Нерафинированное масло прямого отжима, ',

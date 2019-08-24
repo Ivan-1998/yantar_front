@@ -1,6 +1,6 @@
 <template>
   <div class="consumers">
-    <ConsumersHeader />
+    <LandingHeader :img="img" :title="title" :subtitle="subtitle" />
 
     <div class="landing-content consumers-content">
       <div class="container">
@@ -32,13 +32,13 @@
 
 <script>
 import MixinConsumersData from '../../Mixins/MixinConsumersData';
-import ConsumersHeader from './Components/ConsumersHeader';
+import LandingHeader from '../../Components/Landing/LandingHeader';
 
 export default ({
   name: 'Consumers',
   mixins: [MixinConsumersData],
   components: {
-    ConsumersHeader
+    LandingHeader
   }
 });
 </script>

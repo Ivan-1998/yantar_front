@@ -48,7 +48,10 @@ const routes = [
   {
     path: '/partners',
     name: 'partners',
-    component: Partners
+    component: Partners,
+    meta: {
+      showFeedback: true
+    }
   },
   {
     path: '/products',

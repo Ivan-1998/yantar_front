@@ -89,14 +89,6 @@ select:focus {outline: none;}
     }
   }
 
-  &-content {
-    margin-top: -200px;
-    padding-top: 275px;
-    padding-bottom: 30px;
-    background-image: url('~@/assets/images/landing-bg.png');
-    background-position: top center;
-    background-size: 100% 100%;
-  }
 }
 
 
@@ -155,11 +147,6 @@ select:focus {outline: none;}
           margin-bottom: 20px;
         }
       }
-    }
-    &-content {
-      background-image: none;
-      margin-top: 0;
-      padding-top: 0;
     }
   }
 }
