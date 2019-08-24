@@ -1,243 +1,136 @@
 .partners {
-  &__header {
-    background: /*url('/src/images/feedback-background.jpg')*/ #fff;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    width: 1280px;
-    margin: 0 auto;
-    &__content {
-      // outline: $outline;
+  padding-bottom: 40px;
+  &-header {
+    padding-bottom: 0;
+  }
+
+  &-profitable {
+    text-align: center;  
+    &__bg {
+      background-color: #FCFCFC;
+    }
+    &__list {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      width: 1100px;
-      height: 460px;
-      margin: 0 auto;
-      position: relative;     
-    }
-    &__text {
-      width: 55%;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-      h1 {
-        line-height: normal;
-        color: #313131;
-        line-height: 150%;
-        font-size: 34px;
-        letter-spacing: 1px;
-      }
-      h2 {
-        line-height: 160%;
-        font-size: 20px;
-        margin-top: 10px;
-        letter-spacing: 1px;
-        color: $black;
-      }      
-    }
-    &__right {
-      position: absolute;
-      right: 0; bottom: 0;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      /*background: url('/src/images/cunsomers-background.jpg');*/
-      background: #FFE461;
-      background-size: cover;
-      z-index: 1;
-      img {
-        z-index: 3;
-        pointer-events: none;
-        position: absolute;
-        right: 15%;
-        bottom: 0;
-      }
-    }
-  }
 
-  &__advantages {   
-    background: #FCFCFC;
-    z-index: 5;
-    pointer-events: none;
-    &__title {
-      text-align: center;
-      width: 100%;
-      margin-bottom: 5%;  
-      font-size: 27px;
-      line-height: 32px;
-      color: $black;
-    }
-    &__content {
-      // outline: $outline;
-      width: 1100px;
-      height: 500px;
-      margin: 0 auto;
-      position: relative;
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      .advantage {
-        width: 130px;
-        text-align: center;
-        margin: 0 5%;
-        &__img {  
+      .item {
+        &-image {
+          width: 130px;
+          height: 130px;
+          margin: 0 auto 20px auto;
           display: flex;
-          justify-content: center;
           align-items: center;
-          height: 130px;
-          background: #FFE461;
+          justify-content: center;
           border-radius: 50%;
-          color: $black;
-          img {
-            width: 60px;
-            height: 60px;
-          }
+          background-color: $yellow;
+          img {width: 40%;}
         }
-        &__info {
-          padding-top: 10px;
-          font-size: 18px;
-        }
-      }
-    }
-  }
-
-  &__stages {
-    pointer-events: none;
-    background: #fff;
-    &__title {
-      text-align: center;
-      width: 100%;
-      margin-bottom: 20px;  
-      font-size: 27px;
-      line-height: 32px;
-      color: $black;
-    }
-    &__content {
-      // outline: $outline;
-      width: 1100px;
-      height: 500px;
-      margin: 0 auto;
-      position: relative;
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      .stage {
-        width: 130px;
-        text-align: center;
-        &__img { 
-          height: 130px;
-          color: $black;
-          img {
-            mix-blend-mode: luminosity;
-            width: 100px;
-            height: 100px;
-          }
-        }
-        &__info {
-          padding-top: 10px;
+        p {
+          width: 70%;
+          margin: 0 auto;
           font-size: 16px;
         }
       }
     }
   }
-}
 
-@media (max-width: $desktop-big) {
-  .partners {
-    &__header {
-      width: 100%;
-      max-width: $desktop-big; 
-      &__content {
-        width: 100%; height: auto;
+  &-terms {
+    background-color: #fff;
+    text-align: center;
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .item {
+      &-image {
+        display: flex;
+        align-items: center;
         justify-content: center;
-        flex-direction: column;
+        margin: 0 auto 20px auto;
       }
-      &__text {
+      p {
         width: 70%;
-        margin: 30px 0;
-        text-align: center;
-      }   
-      &__right {
-        position: relative;
+        margin: 0 auto;
+        font-size: 16px;
       }
     }
-    &__advantages {
-      width: 100%;
-      max-width: $desktop-big; 
-      &__content {
-        width: 100%;
-        height: auto;
-        padding: 60px 0;
-      }
-    }
-    &__stages {
-      width: 100%;
-      max-width: $desktop-big; 
-      &__content {
-        width: 100%;
-        height: auto;
-        padding-bottom: 60px;
-      }
+  }
+
+  &-block {
+    padding: 80px 0;
+    &__title {
+      margin-bottom: 70px;
+      font-size: 27px;
+      text-align: center;
     }
   }
 }
 
 @media (max-width: $desktop-little) {
   .partners {
-    &__header {
-      max-width: $desktop-little;
-    } 
-    &__advantages {
-      max-width: $desktop-little; 
-      &__content {
-        .advantage {
-          margin: 25px;
+    padding-bottom: 20px;
+    &-profitable {
+      &__list {
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .item {
+          width: 50%;
+          margin-bottom: 30px;
         }
       }
     }
-    &__stages {
-      max-width: $desktop-little; 
-      .stage {
-        margin: 25px 0;
+
+    &-terms {
+      &__list {
+        justify-content: space-around;
+        flex-wrap: wrap;
+        & > div {
+          width: 50%;
+          margin-bottom: 30px;
+        }
+        .item {
+          margin: 0 auto;
+        }
+
+        .line {
+          display: none;
+        }
       }
+    }
+
+    &-block {
+      padding: 60px 0;
     }
   }
 }
 
 @media (max-width: $tablet) {
   .partners {
-    &__header {
-      max-width: $tablet; 
-      &__right {
-        width: 300px; height: 300px;
-        img {
-          height: 300px; width: auto;
+    &-profitable {
+      &__list {
+        .item {
+          &-image {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 10px auto;
+          }
         }
       }
-      &__text {
-        h1 {
-          font-size: 30px;
-        }
-        h2 {
-          font-size: 18px;
-        }    
-      }
     }
-    &__advantages {
-      max-width: $tablet; 
+
+    &-block {
+      padding: 40px 0;
       &__title {
-        font-size: 25px;
-        width: 95%;
-      }
-    }
-    &__stages {
-      max-width: $tablet; 
-      &__title {
-        font-size: 25px;
+        margin-bottom: 40px;
       }
     }
   }
@@ -245,41 +138,42 @@
 
 @media (max-width: $phone) {
   .partners {
-    &__header {
-      max-width: $phone; 
-      &__right {
-        width: 250px; height: 250px;
-        img {
-          height: 250px; width: auto;
+    &-profitable {
+      &__list {
+        .item {
+          &-image {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px auto;
+          }
+          p {
+            width: 90%;
+            font-size: 14px;
+          }
         }
-      }
-      &__text {
-        h1 {
-          font-size: 24px;
-        }
-        h2 {
-          font-size: 16px;
-        }    
       }
     }
-    &__advantages {
-      max-width: $phone; 
+
+    &-terms {
+      &__list {
+        .item {
+          &-image {
+            img {
+              max-width: 80px;
+            }
+          }
+          p {
+            width: 90%;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    &-block {
+      padding: 40px 0 10px 0;
       &__title {
-        font-size: 22px;
-      }
-    }
-    &__stages {
-      max-width: $phone; 
-      &__content {
-        .stage {
-          margin: 25px;
-          &:nth-child(3), &:nth-child(5), &:nth-child(7) {
-            display: none;
-          }
-          &__title {
-            font-size: 22px;
-          }
-        }
+        font-size: 23px;
       }
     }
   }
