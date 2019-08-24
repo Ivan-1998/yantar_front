@@ -104,7 +104,6 @@ export default {
   .slick {
     &-arrows {
       width: 100%;
-      max-width: $desktop-big;  
       left: 0;
     }
   }
@@ -112,9 +111,6 @@ export default {
 
 @media (max-width: $desktop-little) {
   .slick {
-    &-arrows {
-      max-width: $desktop-little;
-    }
   }
 }
 

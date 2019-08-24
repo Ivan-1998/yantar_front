@@ -315,7 +315,6 @@
   .main {
     width: 100%;
     margin: 0 auto;
-    max-width: $desktop-big;
     &-slider {
       &__slide {
         & > div {
@@ -326,7 +325,6 @@
     &-links {
       width: 95%;
       margin: 0 auto;
-      max-width: $desktop-big;
       .cart { 
         margin: 0 auto 30px auto;
         &:nth-child(1) {
@@ -369,7 +367,6 @@
 
 @media (max-width: $desktop-little) {
   .main {
-    max-width: $desktop-little;
     &-slider {
       &__slide {
         & > div {
@@ -380,7 +377,6 @@
       }
     } 
     &-links {
-      max-width: $desktop-little;
       .cart {
         flex: 0 0 45%;
       }
@@ -390,7 +386,6 @@
 
 @media (max-width: $tablet) {
   .main {
-    max-width: $tablet;
     &-slider {
       &__slide {
         & > div {
@@ -411,7 +406,6 @@
       }
     } 
     &-links {
-      max-width: $tablet;
       .cart {
         flex: 0 0 60%;
       }
@@ -421,7 +415,6 @@
 
 @media (max-width: $phone) {
   .main {
-    max-width: $phone;
     &-slider {
       & > div {
         .left, .right {
@@ -430,7 +423,6 @@
       }
     } 
     &-links {
-      max-width: $phone;
       .cart {
         flex: 0 0 80%;
         &:nth-child(1) {

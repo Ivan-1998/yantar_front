@@ -37,14 +37,12 @@
 @media (max-width: $desktop-big) {
   .contacts {
     width: 100%;
-    margin: 0 auto;
-    max-width: $desktop-big;  
+    margin: 0 auto;  
   }
 }
 
 @media (max-width: $desktop-little) {
   .contacts {
-    max-width: $desktop-little;
     &__left {
       width: 60%;
     }
@@ -53,7 +51,6 @@
 
 @media (max-width: $tablet) {
   .contacts {
-    max-width: $tablet;
     &__inner {
       height: auto;
     }
@@ -67,11 +64,5 @@
     &__map {
       position: relative;
     }
-  }
-}
-
-@media (max-width: $phone) {
-  .contacts {
-    max-width: $phone;
   }
 }
