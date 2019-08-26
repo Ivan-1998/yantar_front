@@ -44,7 +44,6 @@
   .footer {
     width: 100%;
     margin: 0 auto;
-    max-width: $desktop-big;  
     &__content {
       width: auto;
     }
@@ -60,16 +59,8 @@
   }
 }
 
-
-@media (max-width: $desktop-little) {
-  .footer {
-    max-width: $desktop-little;
-  }
-}
-
 @media (max-width: $tablet) {
   .footer {
-    max-width: $tablet;
     &__inner {
       display: flex;
       justify-content: center;
@@ -89,12 +80,5 @@
     &__item {
       display: none;
     }
-  }
-}
-
-
-@media (max-width: $phone) {
-  .footer {
-    max-width: $phone;  
   }
 }

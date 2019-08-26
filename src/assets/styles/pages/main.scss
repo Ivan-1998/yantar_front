@@ -310,3 +310,147 @@
     }
   }
 }
+
+@media (max-width: $desktop-big) {
+  .main {
+    width: 100%;
+    margin: 0 auto;
+    &-slider {
+      &__slide {
+        & > div {
+          width: 100%;  
+        }
+      }
+    }  
+    &-links {
+      width: 95%;
+      margin: 0 auto;
+      .cart { 
+        margin: 0 auto 30px auto;
+        &:nth-child(1) {
+          .cart-img {
+            width: 75px;
+          }
+        }
+        &:nth-child(2) {
+          .cart-img {
+            width: 120px;
+          }
+        }
+        &:nth-child(3) {
+          .cart-img {
+            width: 130px;
+          }
+        }
+        &:nth-child(4) {
+          .cart-img {
+            width: 140px;
+          }
+        }
+        &:nth-child(5) {
+          .cart-img {
+            width: 140px;
+            right: 0px;
+          }
+        }
+        &:nth-child(6) {
+          .cart-img {
+            width: 140px;
+            right: 0px;
+          }
+        }
+      }
+    } 
+  }
+  
+}
+
+@media (max-width: $desktop-little) {
+  .main {
+    &-slider {
+      &__slide {
+        & > div {
+          h1 {
+            font-size: 40px;
+          }
+        }
+      }
+    } 
+    &-links {
+      .cart {
+        flex: 0 0 45%;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .main {
+    &-slider {
+      &__slide {
+        & > div {
+          flex-direction: column;
+          .left, .right {
+            width: 55%;
+            margin: 10px 0;
+            text-align: center;
+          }
+          h1 {
+            font-size: 30px;
+          }
+          img {
+            width: 60%;
+            margin: 10px auto;
+          }
+        }
+      }
+    } 
+    &-links {
+      .cart {
+        flex: 0 0 60%;
+      }
+    }
+  }
+}
+
+@media (max-width: $phone) {
+  .main {
+    &-slider {
+      & > div {
+        .left, .right {
+          width: 60%;
+        }
+      }
+    } 
+    &-links {
+      .cart {
+        flex: 0 0 80%;
+        &:nth-child(1) {
+          .cart-img {
+            width: 65px;
+          }
+        }
+        &:nth-child(2) {
+          .cart-img {
+            width: 100px;
+          }
+        }
+        &:nth-child(3) {
+          .cart-img {
+            width: 110px;
+          }
+        }
+        &:nth-child(5) {
+          .cart-img {
+            width: 120px;
+          }
+        }
+        &:nth-child(6) {
+          .cart-img {
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+}

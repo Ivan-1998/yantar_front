@@ -103,7 +103,11 @@ select:focus {outline: none;}
   .container {
     width: 90%;
   }
-
+  .page {
+    &-title {
+      padding-left: 25px;
+    }
+  }
   .landing {
     &-header {
       h1 {

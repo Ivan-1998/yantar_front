@@ -73,7 +73,6 @@
   .about {
     width: 100%;
     margin: 0 auto;
-    max-width: $desktop-big; 
     &__header {
       &__content {
         width: 100%;
@@ -109,7 +108,6 @@
 
 @media (max-width: $desktop-little) {
   .about {
-    max-width: $desktop-little; 
     &__header {
       &__content {
         img {
@@ -140,7 +138,6 @@
 
 @media (max-width: $tablet) {
   .about {
-    max-width: $tablet;
     &__main {
       &__content {
         .item {
@@ -160,7 +157,6 @@
 
 @media (max-width: $phone) {
   .about {
-    max-width: $phone;
     &__main {
       &__content {
         .item {

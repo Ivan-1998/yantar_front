@@ -80,3 +80,29 @@
     }
   }
 }
+
+@media (max-width: $desktop-big) {
+  .products {
+    width: 95%;
+    margin: 0 auto; 
+  }
+}
+
+@media (max-width: $desktop-little) {
+  .product {
+    width: 45%;
+    margin: 10px auto!important;
+  }
+}
+
+@media (max-width: $tablet) {
+  .product {
+    width: 60%;
+  }
+}
+
+@media (max-width: $phone) {
+  .product {
+    width: 85%;
+  }
+}
