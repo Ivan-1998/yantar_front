@@ -146,169 +146,6 @@
       }
     }
   }
-
-  // потом отрефакторить
-  &-our-slider {
-    padding: 40px 0 60px 0;
-    height: auto;
-    background: url('/src/images/main-slider-background.jpg') no-repeat;
-    background-size: cover;
-    .slick-slider {
-      width: 1280px;
-      margin: 0 auto;
-      max-width: $max-width;
-      .slick-dots {
-        bottom: -25px;
-      }
-    }
-    &-slide {
-      h3 {
-        width: 1100px;
-        margin: 0 auto;
-        color: $black;
-        font-size: 18px;
-        margin-bottom: -8px;
-      }
-      .link-more {
-        width: 1100px;
-        margin: 0 auto;
-        display: block;
-        text-align: right;
-        color: $black;
-        font-family: SFLight, Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-      .wrapper-cards {
-        width: 1100px;
-        padding: 0 0 30px 0;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .card {  
-          background: #fff;
-          box-shadow: 7px 14px 19px rgba(0, 0, 0, 0.22);
-          border-radius: 15px;
-          color: $black;
-          &:hover {
-            .arrow {
-              width: 60px;
-            }
-          }
-          h4 {
-            font-family: SFLight, Arial, Helvetica, sans-serif;
-            font-weight: 100;
-          }
-        }
-        &-products {
-          .card {
-            width: 48%;
-            padding: 20px 0;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-around;
-            cursor: pointer;
-            img {
-              // outline: $outline;
-              width: 25%;
-            }
-            &-info {
-              // outline: $outline;
-              width: 60%;
-              h4 {
-                font-size: 25px;
-                font-weight: 100;
-                position: relative;
-                padding: 20px 0 10px 0;
-                &::after {
-                  content: '';
-                  width: 10%;
-                  height: 2px;
-                  background: $black;
-                  position: absolute;
-                  bottom: 0;
-                  left: 0;
-                }
-              }
-              &-price {
-                // outline: $outline;
-                font-size: 20px;
-                margin: 30px auto;
-                p {
-                  margin: 5px auto;
-                  &.before {
-                    color: #FF5F5F;
-                    position: relative;
-                    display: inline;
-                    &:before {
-                      content: '';
-                      width: 100%;
-                      height: 2px;
-                      position: absolute;
-                      background: #FF5F5F;
-                      left: 0;
-                      top: calc(50% - 1px);
-
-                    }
-                  }
-                }
-              }
-              .link-go {
-                width: 45%;
-              }
-            }
-          }
-        }
-        &-news {
-          .card {
-            width: calc(30% - 20px);
-            padding: 20px;
-          }
-          h4 {
-            font-size: 25px;
-            height: 60px;
-          }
-          p {
-            font-size: 16px;
-            margin: 15px 0;
-            height: 95px;
-          }
-          .link-go {
-            width: 47%;
-          }
-        }
-        &-recipes {
-          .card {
-            width: 30%;
-            overflow: hidden;
-            .background {
-              height: 120px;
-              background-size: cover;
-              background-position: center center;
-            }
-            .recipe-info {
-              width: 90%;
-              margin: 10px auto;
-              p {
-                font-size: 8px;
-                text-transform: uppercase;
-                margin: 5px 0;
-              }
-              h4 {
-                font-size: 16px;
-                height: 60px;
-              }
-              .link-go {
-                margin: 10px 0 20px 0;
-                width: 47%;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 @media (max-width: $desktop-big) {
@@ -407,7 +244,10 @@
     } 
     &-links {
       .cart {
-        flex: 0 0 60%;
+        flex: 0 0 70%;
+        .arrow {
+          // width: 55%;
+        }
       }
     }
   }
@@ -424,7 +264,10 @@
     } 
     &-links {
       .cart {
-        flex: 0 0 80%;
+        flex: 0 0 95%;
+        &-link {
+          width: 120px;
+        }
         &:nth-child(1) {
           .cart-img {
             width: 65px;

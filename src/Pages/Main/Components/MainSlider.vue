@@ -55,9 +55,17 @@ export default {
   data() {
     return {
       slickOptions: {
-        dots: false,
+        dots: true,
         prevArrow: false,
-        nextArrow: false
+        nextArrow: false,
+        responsive: [
+          {
+            breakpoint: 721,
+            settings: {
+              dots: true
+            }
+          }
+        ]
       }
     };
   },
@@ -85,7 +93,7 @@ export default {
       justify-content: space-between;
       position: absolute;
       left: calc(50% - 550px);
-      top: calc(50% - 22.5px);
+      top: calc(50% - 22.5px - 30px);
 
       button {
         width: 45px;
@@ -103,14 +111,9 @@ export default {
 @media (max-width: $desktop-big) {
   .slick {
     &-arrows {
-      width: 100%;
-      left: 0;
+      width: 97%;
+      left: 1.5%;
     }
-  }
-}
-
-@media (max-width: $desktop-little) {
-  .slick {
   }
 }
 
@@ -120,8 +123,5 @@ export default {
       display: none;
     }
   }
-}
-
-@media (max-width: $phone) {
 }
 </style>

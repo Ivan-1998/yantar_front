@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     transition: 0.4s;      
-    span {
+    & > span {
       display: block;
       width: 100%;
       height: 2px;
@@ -38,7 +38,8 @@
       }
     }
   }
-  span {
+
+  .text {
     font-size: 14px;
   }
 
@@ -48,6 +49,14 @@
       span, span:before, span:after {
         background-color: $black;
       }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .smooth-arrow {
+    .text {
+      
     }
   }
 }

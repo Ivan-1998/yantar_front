@@ -98,3 +98,30 @@
 .slick-arrow.slick-hidden {
   display: none;
 }
+
+
+.slick {
+  &-dots {
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+    li {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-color: $black;
+      border-radius: 50%;
+      transition: 0.2s;
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+      &.slick-active {
+        background-color: $yellow;
+      }
+    }
+    button {
+      display: none;
+    }
+  }
+}

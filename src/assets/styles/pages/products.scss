@@ -8,9 +8,7 @@
       flex-wrap: wrap;
     }
 
-
     &-paginate {
-      // outline: $outline;
       text-align: center;
       li {
         display: inline-block;
@@ -64,9 +62,8 @@
     position: relative;
     height: 100%;
   }
-
   &-link {
-    width: 80%;
+    width: 140px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -85,13 +82,23 @@
   .products {
     width: 95%;
     margin: 0 auto; 
+
+  }
+  .product {
+    &-link {
+      width: 140px;
+    }
   }
 }
 
 @media (max-width: $desktop-little) {
   .product {
     width: 45%;
-    margin: 10px auto!important;
+    margin: 10px auto;
+    &:nth-child(3n) {
+      margin-right: auto;
+    }
+
   }
 }
 
@@ -103,6 +110,6 @@
 
 @media (max-width: $phone) {
   .product {
-    width: 85%;
+    width: 95%;
   }
 }

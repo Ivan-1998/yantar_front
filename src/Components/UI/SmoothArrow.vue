@@ -5,7 +5,7 @@
                @click.native="clickHandler"> 
 
     <div class="arrow"><span></span></div>
-    {{text}}
+    <span class="text">{{text}}</span>
   </router-link>
 </template>
 
