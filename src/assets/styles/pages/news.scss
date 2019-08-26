@@ -87,3 +87,41 @@
     line-height: 20px;
   }
 }
+
+@media (max-width: $desktop-big) {
+  .new {
+    &-content {
+      height: auto;
+    }
+    &-description {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .new { 
+    flex-wrap: wrap;
+    &-img {
+      margin: 0 auto;
+    }
+  
+    &-content {
+      flex: 0 0 100%;
+      margin: 20px auto;
+    }
+    
+  }
+
+  .new-page {
+    &__header {
+      flex-wrap: wrap;
+      .img {
+        margin: 0 auto;
+      }
+      .inscription {
+        margin-top: 25px;
+      }
+    }
+  }
+}
