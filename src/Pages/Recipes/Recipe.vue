@@ -1,6 +1,6 @@
 <template>
-  <div class="container new__page">
-    <div class="new-page__header">
+  <div class="container recipe__page">
+    <div class="recipe-page__header">
       <div class="img" :style="`background-image: url('http://sibtiger.com:3000${item.images}')`"></div>
       <div class="inscription">
         <h2>{{item.title}}</h2>
@@ -8,13 +8,13 @@
       </div>
     </div>
 
-    <div class="new-page__content" v-html="item.description"></div>
+    <div class="recipe-page__content" v-html="item.description"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'New',
+  name: 'Recipe',
   data() {
     return {
       item: {}
@@ -22,12 +22,12 @@ export default {
   },
   beforeRouteEnter (to, from, next) {
     next(vm => {
-      vm.getNew();
+      vm.getRecipe();
     })
   },
   methods: {
-    getNew() {
-      this.$http.get(`api/news/${this.$route.params.new_id}`)
+    getRecipe() {
+      this.$http.get(`api/recipes/${this.$route.params.recipe_id}`)
         .then(response => this.item = response.body)
     }
   }

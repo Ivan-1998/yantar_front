@@ -18,9 +18,29 @@
 @import './pages/about.scss';
 @import './pages/contacts.scss';
 @import './pages/news.scss';
+@import './pages/recipes.scss';
 
 
 // z-indexes
+.contacts {
+  &__left {
+    z-index: 3;
+  }
+}
 // 20 - header
-// 25 - mobile header
-// 30 - burger
+.header {
+  z-index: 20;
+  
+  // 30 - burger
+  &-burger {
+    & > div {
+      z-index: 30;
+    }
+  }
+  // 25 - mobile header
+  &-mobile {
+    z-index: 25;
+  }
+}
+
+

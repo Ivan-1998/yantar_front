@@ -9,6 +9,8 @@ import Partners from './Pages/Partners/Partners';
 import Products from './Pages/Products/Products';
 import News from './Pages/News/News';
 import New from './Pages/News/New';
+import Recipes from './Pages/Recipes/Recipes';
+import Recipe from './Pages/Recipes/Recipe';
 
 Vue.use(VueRouter);
 
@@ -73,6 +75,22 @@ const routes = [
     path: '/news/:new_id',
     name: 'new',
     component: New,
+    meta: {
+      showFeedback: true
+    }
+  },
+  {
+    path: '/recipes',
+    name: 'recipes',
+    component: Recipes,
+    meta: {
+      showFeedback: true
+    }
+  },
+  {
+    path: '/recipes/:recipe_id',
+    name: 'recipe',
+    component: Recipe,
     meta: {
       showFeedback: true
     }
