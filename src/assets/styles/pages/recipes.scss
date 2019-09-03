@@ -101,9 +101,6 @@
   
   @media (max-width: $desktop-big) {
     .recipe {
-      &-content {
-        height: auto;
-      }
       &-description {
         padding-bottom: 50px;
       }
@@ -118,10 +115,10 @@
       }
     
       &-content {
-        flex: 0 0 100%;
+        flex: 0 0 90%;
         margin: 20px auto;
+        height: 100px;
       }
-      
     }
   
     .recipe-page {
