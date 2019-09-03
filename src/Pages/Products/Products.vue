@@ -3,7 +3,9 @@
     <h1 class="page-title">{{pageTitle}}</h1>
 
     <div class="products-list">
-      <ProductsProductCart v-for="(product, index) in products" :key="index" :product="product" />
+      <div class="product" v-for="(product, index) in products" :key="index"  @click="openModalHandler(product)">
+        <ProductsProductCart :product="product"  />
+      </div>
     </div>
 
     <ul class="products-paginate" v-if="false">
@@ -11,17 +13,20 @@
       <li><span>2</span></li>
       <li><span>3</span></li>
     </ul> 
+
+    <ProductsProductCartModal />
   </div>
 </template>
 
 <script>
-import ProductsProductCart from './Components/ProductsProductCart';
 import MixinCommonMethods from '../../Mixins/MixinCommonMethods';
+import ProductsProductCart from './Components/ProductsProductCart';
+import ProductsProductCartModal from './Components/ProductsProductCartModal';
 
 export default ({
   name: 'Products',
   mixins: [MixinCommonMethods],
-  components: {ProductsProductCart},
+  components: {ProductsProductCart, ProductsProductCartModal},
   mounted() {
     this.$store.commit('setPage', {title: 'Наша продукция'});
   },
@@ -42,6 +47,9 @@ export default ({
           const data = response.body.products;
           this.products = this.products.concat(data.butter, data.halva, data.seed);
         });
+    },
+    openModalHandler(product) {
+      this.$modal.show('product-info', {product});
     }
   }
 });

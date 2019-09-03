@@ -1,10 +1,8 @@
 <template>
-  <div class="product">
-
+  <div>
     <div class="product-img">
       <img :src="`http://sibtiger.com:3000/${product.img[0]}`" :alt="product.title">
     </div>
-
     <div class="product-inner">
       <h4 class="product-title">{{product.title}}</h4>
       <div class="product-link">
@@ -17,6 +15,7 @@
 <script>
 import SmoothArrow from '../../../Components/UI/SmoothArrow';
 
+
 export default {
   name: 'ProductsProductCart',
   components: {
@@ -28,6 +27,7 @@ export default {
       default: () => {}
     }
   }
+
 }
 </script>
 

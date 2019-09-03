@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VueTruncate from 'vue-truncate-filter';
+import Vmodal from 'vue-js-modal';
 import {library} from '@fortawesome/fontawesome-svg-core';
 
 import {
   faChevronRight,
-  faChevronLeft
+  faChevronLeft,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 
@@ -15,11 +17,13 @@ import store from './store';
 
 library.add(
   faChevronRight,
-  faChevronLeft
+  faChevronLeft,
+  faTimes
 );
 
 Vue.use(VueResource);
 Vue.use(VueTruncate);
+Vue.use(Vmodal);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.http.options.root = 'http://sibtiger.com:3000';
 Vue.config.productionTip = false;
