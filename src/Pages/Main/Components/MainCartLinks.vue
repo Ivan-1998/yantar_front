@@ -66,7 +66,7 @@ export default {
         {
           name: 'Каталог рецептов',
           text: '',
-          link: 'main',
+          link: 'recipes',
           image: ImgRecipes
         },
         {

@@ -20,6 +20,7 @@ const routes = [
     name: 'main',
     component: Main,
     meta: {
+      title: 'Главная',
       showFeedback: false
     }
   },
@@ -28,6 +29,7 @@ const routes = [
     name: 'about',
     component: About,
     meta: {
+      title: 'О нас',
       showFeedback: true
     }
   },
@@ -36,6 +38,7 @@ const routes = [
     name: 'consumers',
     component: Consumers,
     meta: {
+      title: 'Потребителям',
       showFeedback: true
     }
   },
@@ -44,6 +47,7 @@ const routes = [
     name: 'contacts',
     component: Contacts,
     meta: {
+      title: 'Контакты',
       showFeedback: true
     }
   },
@@ -52,6 +56,7 @@ const routes = [
     name: 'partners',
     component: Partners,
     meta: {
+      title: 'Партнерам',
       showFeedback: true
     }
   },
@@ -60,6 +65,7 @@ const routes = [
     name: 'products',
     component: Products,
     meta: {
+      title: 'Продукция',
       showFeedback: true
     }
   },
@@ -68,6 +74,7 @@ const routes = [
     name: 'news',
     component: News,
     meta: {
+      title: 'Новости',
       showFeedback: true
     }
   },
@@ -76,6 +83,7 @@ const routes = [
     name: 'new',
     component: New,
     meta: {
+      title: 'Новости',
       showFeedback: true
     }
   },
@@ -84,6 +92,7 @@ const routes = [
     name: 'recipes',
     component: Recipes,
     meta: {
+      title: 'Рецепты',
       showFeedback: true
     }
   },
@@ -92,6 +101,7 @@ const routes = [
     name: 'recipe',
     component: Recipe,
     meta: {
+      title: 'Рецепты',
       showFeedback: true
     }
   }
@@ -103,6 +113,11 @@ const router = new VueRouter({
     return { x: 0, y: 0 };
   },
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title} | Янтарь`;
+  next();
 });
 
 export default router;

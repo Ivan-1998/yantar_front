@@ -1,5 +1,5 @@
 <template>
-  <div class="container recipe__page">
+  <div class="container recipe-page">
     <div class="recipe-page__header">
       <div class="img" :style="`background-image: url('http://sibtiger.com:3000${item.images}')`"></div>
       <div class="inscription">
@@ -33,3 +33,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .recipe-page__content {
+    p {
+      padding: 5px 0;
+    }
+  }
+</style>

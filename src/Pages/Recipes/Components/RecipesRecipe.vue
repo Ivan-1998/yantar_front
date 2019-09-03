@@ -6,7 +6,6 @@
 
     <div class="recipe-content">
       <p class="recipe-title">{{item.title}}</p>
-      <p class="recipe-description">{{item.description | truncate(250)}}</p>
 
       <div class="recipe-link">
         <SmoothArrow :to="{name: 'recipe', params: {recipe_id: item.id}}" />

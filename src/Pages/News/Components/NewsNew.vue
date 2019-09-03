@@ -6,7 +6,6 @@
 
     <div class="new-content">
       <p class="new-title">{{item.title}}</p>
-      <p class="new-description">{{item.description | truncate(250)}}</p>
 
       <div class="new-link">
         <SmoothArrow :to="{name: 'new', params: {new_id: item.id}}" />

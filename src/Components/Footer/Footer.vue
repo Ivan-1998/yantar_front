@@ -7,6 +7,7 @@
             <li><router-link tag="a" :to="{name: 'products'}">Продукция</router-link></li>
             <li><router-link tag="a" :to="{name: 'consumers'}">Потребителям</router-link></li>
             <li><router-link tag="a" :to="{name: 'partners'}">Партнерам</router-link></li>
+            <li><router-link tag="a" :to="{name: 'recipes'}">Рецепты</router-link></li>
         </ul>
         <ul class="footer__item">
             <li><router-link :to="{name: 'about'}">О нас</router-link></li>
