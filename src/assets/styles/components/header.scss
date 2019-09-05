@@ -27,8 +27,8 @@
 
   &-burger {
     padding: 10px;
+    display: none;
     & > div {
-      display: none;
       position: absolute;
       top: calc(50% - 15px);
       right: 0;
@@ -137,9 +137,7 @@
     }
 
     &-burger {
-      & > div {
-        display: block;
-      }  
+      display: block;
     }
   }
 }
@@ -153,7 +151,6 @@
     }
   }
 } 
-
 
 
 
