@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-import VueTruncate from 'vue-truncate-filter';
 import Vmodal from 'vue-js-modal';
 import {library} from '@fortawesome/fontawesome-svg-core';
 
@@ -22,7 +21,6 @@ library.add(
 );
 
 Vue.use(VueResource);
-Vue.use(VueTruncate);
 Vue.use(Vmodal);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.http.options.root = 'http://sibtiger.com:3000';

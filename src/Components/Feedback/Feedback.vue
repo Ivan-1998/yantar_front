@@ -1,40 +1,121 @@
 <template>
   <div class="feedback">
-    <form class="feedback-form">
+    <ValidationObserver ref="feedback" tag="form" class="feedback-form" @submit.prevent="sendForm">
       <div class="feedback-left">
         <h2>Ответим на любые ваши вопросы!</h2>
         <img src="../../assets/images/feedback.svg" alt="Оставьте заявку!" />
       </div>
       <div class="feedback-right">
+        <ValidationProvider class="form-group"
+                            tag="div"
+                            rules="required|email"
+                            v-slot="{ errors }"
+        >
+            <input type="email"
+                   placeholder="Электронный адрес"
+                   :class="{'input-error' : errors[0]}"
+                   v-model="formData.email"
+            />
+        </ValidationProvider>
+
         <div class="form-group">
-          <input type="email" placeholder="Электронный адрес" />
+          <input type="text"
+                 placeholder="Имя"
+                 v-model="formData.name"
+          />
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Имя" />
+          <input type="text"
+                 placeholder="Номер телефона"
+                 v-model="formData.phone_number"
+          />
         </div>
-        <div class="form-group">
-          <input type="text" placeholder="Номер телефона" />
-        </div>
-        <div class="form-group">
-          <textarea placeholder="Сообщение"></textarea>
-        </div>
-        <div class="form-group form-group__checkbox">
+
+        <ValidationProvider class="form-group"
+                            tag="div"
+                            rules="required|min:6"
+                            v-slot="{ errors }"
+        >
+          <textarea placeholder="Сообщение"
+                    v-model="formData.message"
+                    :class="{'input-error' : errors[0]}"
+          ></textarea>
+        </ValidationProvider>
+
+        <ValidationProvider tag="div"
+                            class="form-group form-group__checkbox"
+                            :rules="{ required: { allowFalse: false } }"
+                            v-slot="{ errors }"
+        > 
           <label>
-            <input type="checkbox" />
-            <span class="checkmark"></span>
+            <input type="checkbox" v-model="isAgreePolicy" />
+            <span class="checkmark" :class="{'checkbox-error' : errors[0]}"></span>
           </label>
           <p>Я согласен с условиями <a href="#">политики конфиденциальности</a></p> 
-        </div>
+        </ValidationProvider>
+
+          
         <div class="form-group">
           <button type="submit">Отправить письмо</button>
         </div>
       </div>
-    </form>
+    </ValidationObserver>
+
+    <FeedbackModalSuccess />
   </div>
 </template>
 
 <script>
+import { ValidationObserver, ValidationProvider, extend , configure } from 'vee-validate';
+import { required, email, min } from 'vee-validate/dist/rules';
+import FeedbackModalSuccess from './FeedbackModalSuccess';
+
+extend('required', required);
+extend('email', email);
+extend('min', min);
+configure({
+  classes: {
+    invalid: ['input-error']
+  }
+});
+
 export default ({
-  name: 'Feedback'
+  name: 'Feedback',
+  components: {
+    ValidationObserver, ValidationProvider,
+    FeedbackModalSuccess
+  },
+  data() {
+    return {
+      formData: {
+        email: '',
+        name: '',
+        phone_number: '',
+        message: ''
+      },
+      isAgreePolicy: true
+    };
+  },
+  methods: {
+    async sendForm() {
+      const isValid = await this.$refs.feedback.validate();
+      if (isValid) {
+        this.$http.post('api/feedback', this.formData)
+          .then(() => {
+            this.resetData();
+            this.$modal.show('feedback-send-success');
+          });
+      }
+    },
+    resetData() {
+      this.formData = {
+        email: '',
+        name: '',
+        phone_number: '',
+        message: ''
+      };
+      this.$refs.feedback.reset();
+    }
+  }
 });
 </script>

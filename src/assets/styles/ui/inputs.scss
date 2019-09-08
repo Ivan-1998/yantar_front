@@ -10,6 +10,10 @@
     border: 1px solid transparent;
     border-bottom: 1px solid rgba(62, 62, 62, 0.11);;
     background: #fff;
+    &.input-error {
+      border-bottom: 1px solid $error;
+      transition: 0.4s;
+    }
   }
   textarea {
     width: 100%;
@@ -20,7 +24,11 @@
     color: $black;
     font-size: 14px;
     border: 1px solid transparent;
-    border-bottom: 1px solid rgba(62, 62, 62, 0.11);;
+    border-bottom: 1px solid rgba(62, 62, 62, 0.11);
+    &.input-error {
+      border-bottom: 1px solid $error;
+      transition: 0.4s;
+    }
   }
   // чекбокс
   &__checkbox {
@@ -63,6 +71,10 @@
         border: solid #3E3E3E;
         border-width: 0 4px 4px 0;
         transform: rotate(45deg);
+      }
+      &.checkbox-error {
+        border: 2px solid $error;
+        transition: 0.4s;
       }
     }
     input[type="checkbox"]:checked ~ .checkmark:after {

@@ -51,6 +51,23 @@ div[data-modal="product-info"] {
   }
 }
 
+// попап, который появляется после отправления заявки
+div[data-modal="feedback-send-success"] {
+  .v--modal {
+    padding: 60px 15px !important;
+  }
+  .modal-feedback-send {
+    &__img {
+      width: 70px;
+      margin: 0 auto 20px auto;
+    }
+    p {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+}
+
 @media (max-width: $tablet) {
   .v--modal {
     width: 85% !important;
