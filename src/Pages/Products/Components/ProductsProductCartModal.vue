@@ -4,7 +4,7 @@
          height="auto"
   >
     <div class="modal-product-info__img">
-      <img :src="`http://sibtiger.com:3000/${product.img[0]}`" :alt="`${product.title}`" />
+      <img :src="`http://yantar.in:5000/${product.img[0]}`" :alt="`${product.title}`" />
     </div>
     <div class="modal-product-info__content">
       <h2>{{product.title}}</h2>

@@ -1,7 +1,7 @@
 <template>
   <router-link :to="{name: 'new', params: {new_id: item.id}}" class="new">
     <div class="new-img"
-         :style="`background-image: url('http://sibtiger.com:3000${item.images[0]}')`">
+         :style="`background-image: url('http://yantar.in:5000${item.images[0]}')`">
     </div>
 
     <div class="new-content">
