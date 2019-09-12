@@ -29,6 +29,7 @@ export default ({
     })
   },
   methods: {
+    
     getRecipes() {
       this.$http.get('api/recipes')
         .then(response => this.recipes = response.body)
