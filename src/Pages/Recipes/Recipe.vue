@@ -1,7 +1,7 @@
 <template>
   <div class="container recipe-page">
     <div class="recipe-page__header">
-      <div class="img" :style="`background-image: url('http://sibtiger.com:3000${item.images}')`"></div>
+      <div class="img" :style="`background-image: url('http://yantar.in:5000${item.images}')`"></div>
       <div class="inscription">
         <h2>{{item.title}}</h2>
         <span class="date">{{item.date}}</span>

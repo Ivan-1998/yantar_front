@@ -1,7 +1,7 @@
 <template>
   <router-link :to="{name: 'recipe', params: {recipe_id: item.id}}" class="recipe">
     <div class="recipe-img"
-         :style="`background-image: url('http://sibtiger.com:3000${item.images[0]}')`">
+         :style="`background-image: url('http://yantar.in:5000${item.images[0]}')`">
     </div>
 
     <div class="recipe-content">

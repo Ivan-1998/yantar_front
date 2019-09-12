@@ -23,7 +23,7 @@ library.add(
 Vue.use(VueResource);
 Vue.use(Vmodal);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-Vue.http.options.root = 'http://sibtiger.com:3000';
+Vue.http.options.root = 'http://yantar.in:5000';
 Vue.config.productionTip = false;
 
 Vue.prototype.phone = '+7(800)555-35-35';
