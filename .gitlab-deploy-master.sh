@@ -9,5 +9,5 @@ array=(${string//,/ })
 
 for i in "${!array[@]}"; do
   echo "Deploy project on server ${array[i]}"
-  ssh root@${array[i]} "git pull origin master"
+  ssh root@${array[i]} "cd /root/yantar_front && git pull origin master"
 done
