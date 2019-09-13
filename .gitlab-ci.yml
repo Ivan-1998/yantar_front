@@ -15,17 +15,14 @@ stages:
 
 build:
   stage: build
-  tags:
-    - node
   before_script: 
+    - npm rebuild node-sass
     - npm install 
   script:
     - npm run build
 
 deploy:
   stage: deploy
-  tags:
-    - node
   before_script:
     - mkdir -p ~/.ssh
     - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
