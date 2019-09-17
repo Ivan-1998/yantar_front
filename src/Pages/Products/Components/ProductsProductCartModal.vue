@@ -8,7 +8,7 @@
     </div>
     <div class="modal-product-info__content">
       <h2>{{product.title}}</h2>
-      <p>{{product.description}}</p>
+      <p v-html="product.description"></p>
     </div>
 
     <span class="v--modal-close" @click="$modal.hide('product-info')">
