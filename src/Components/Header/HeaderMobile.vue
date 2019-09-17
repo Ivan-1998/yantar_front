@@ -7,6 +7,13 @@
       >
         <router-link :to="{name: link.routerName}">{{link.text}}</router-link>
       </li>
+  
+      <li @click="$parent.mobileMenuHandler()">
+        <router-link :to="{name: 'news'}">Новости</router-link>
+      </li>
+      <li @click="$parent.mobileMenuHandler()">
+        <router-link :to="{name: 'recipes'}">Рецепты</router-link>
+      </li>
     </ul> 
   </div>
 </template>

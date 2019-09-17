@@ -10,7 +10,6 @@
       flex: 0 0 255px;
       height: 140px;
       margin-right: 30px;
-      background-color: #C4C4C4;
       background-size: 100% 100%;
       background-repeat: no-repeat;
     }
@@ -64,7 +63,6 @@
         flex: 0 0 255px;
         height: 140px;
         margin-right: 30px;
-        background-color: #C4C4C4;
         background-size: 100% 100%;
         background-repeat: no-repeat;
       }
@@ -99,37 +97,48 @@
     }
   }
   
-  @media (max-width: $desktop-big) {
-    .recipe {
-      &-description {
-        padding-bottom: 50px;
+@media (max-width: $desktop-big) {
+  .recipe {
+    &-description {
+      padding-bottom: 50px;
+    }
+  }
+}
+  
+@media (max-width: $tablet) {
+  .recipe { 
+    flex-wrap: wrap;
+    &-img {
+      margin: 0 auto;
+    }
+  
+    &-content {
+      flex: 0 0 90%;
+      margin: 20px auto;
+      height: 100px;
+    }
+  }
+
+  .recipe-page {
+    &__header {
+      flex-wrap: wrap;
+      .img {
+        margin: 0 auto;
+      }
+      .inscription {
+        margin-top: 25px;
       }
     }
   }
-  
-  @media (max-width: $tablet) {
-    .recipe { 
-      flex-wrap: wrap;
-      &-img {
-        margin: 0 auto;
-      }
-    
+}
+
+  @media (max-width: $phone) {
+    .recipe {
       &-content {
         flex: 0 0 90%;
-        margin: 20px auto;
-        height: 100px;
-      }
-    }
-  
-    .recipe-page {
-      &__header {
-        flex-wrap: wrap;
-        .img {
-          margin: 0 auto;
-        }
-        .inscription {
-          margin-top: 25px;
-        }
+        padding-bottom: 40px;
+        height: auto;
+        font-size: 18px;
       }
     }
   }

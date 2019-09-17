@@ -3,11 +3,11 @@
     <div class="footer__content">
       <div class="footer__inner">
         <ul class="footer__item">
-            <li><router-link tag="a" :to="{name: 'main'}">Главная</router-link></li>
-            <li><router-link tag="a" :to="{name: 'products'}">Продукция</router-link></li>
-            <li><router-link tag="a" :to="{name: 'consumers'}">Потребителям</router-link></li>
-            <li><router-link tag="a" :to="{name: 'partners'}">Партнерам</router-link></li>
-            <li><router-link tag="a" :to="{name: 'recipes'}">Рецепты</router-link></li>
+            <li><router-link :to="{name: 'main'}">Главная</router-link></li>
+            <li><router-link :to="{name: 'products'}">Продукция</router-link></li>
+            <li><router-link :to="{name: 'consumers'}">Потребителям</router-link></li>
+            <li><router-link :to="{name: 'partners'}">Партнерам</router-link></li>
+            <li><router-link :to="{name: 'recipes'}">Рецепты</router-link></li>
         </ul>
         <ul class="footer__item">
             <li><router-link :to="{name: 'about'}">О нас</router-link></li>
@@ -25,7 +25,7 @@
     <div class="copyright">
       <div class="copyright__inner">
         <p>ТОО Янтарь УК, © 2001 - 2019</p>
-        <a href="#">Разработка сайтов | СибТайгер</a>
+        <a href="http://sibtiger.com/" target="_blank">Разработка сайтов | СибТайгер</a>
       </div>
     </div>
   </footer>

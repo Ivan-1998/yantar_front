@@ -25,6 +25,7 @@
     font-size: 14px;
     border: 1px solid transparent;
     border-bottom: 1px solid rgba(62, 62, 62, 0.11);
+    font-family: SFRegular, Arial, Helvetica, sans-serif;
     &.input-error {
       border-bottom: 1px solid $error;
       transition: 0.4s;
