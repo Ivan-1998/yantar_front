@@ -26,9 +26,9 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.http.options.root = 'http://yantar.in:5000';
 Vue.config.productionTip = false;
 
-Vue.prototype.phone = '+7(800)555-35-35';
-Vue.prototype.phoneHref = '+78005553535';
-Vue.prototype.email = 'info@yantar.com';
+Vue.prototype.phone = '+7(7232)500-136';
+Vue.prototype.phoneHref = '+77232500136';
+Vue.prototype.email = 'info@yantar.kz';
 Vue.prototype.adress = 'г. Усть-Каменогорск, ул. Грейдерная 1/1';
  
 
