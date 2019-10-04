@@ -9,7 +9,7 @@
 
     <transition name="fade">
       <div class="lightbox" v-if="isLightboxVisible">
-        <div class="lightbox-content" v-on-clickaway="toggleIsLighboxVisible">
+        <div class="lightbox-content" v-click-outside="toggleIsLighboxVisible">
           <img :src="currentImage.src" :alt="currentImage.alt">
         </div>
       </div>
@@ -19,11 +19,13 @@
 </template>
 
 <script>
-import { mixin as clickaway } from 'vue-clickaway';
+import vClickOutside from 'v-click-outside';
 
 export default {
   name: 'imgLightbox',
-  mixins: [clickaway],
+  directives: {
+    clickOutside: vClickOutside.directive
+  },
   props: {
     images: {
       type: Array,
