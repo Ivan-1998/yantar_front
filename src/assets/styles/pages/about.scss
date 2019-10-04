@@ -61,8 +61,11 @@
         right: 8%;
         bottom: -25%; 
         img {
+          display: inline-block;
+          cursor: pointer;
           width: 140px; height: auto;
           margin: 0 5px;
+          transition: 0.4s;
         }
       }
     }
@@ -157,6 +160,14 @@
 
 @media (max-width: $phone) {
   .about {
+    &__header {
+      &__content {
+        img {
+          width: 310px;
+          height: auto;
+        }
+      }
+    }
     &__main {
       &__content {
         .item {

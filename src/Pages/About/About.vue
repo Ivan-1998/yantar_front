@@ -47,8 +47,7 @@
           </div>
 
           <div class="right">
-            <a href="#"><img src="../../assets/images/certificate1.jpg" alt="Сертификат"></a>
-            <a href="#"><img src="../../assets/images/certificate2.jpg" alt="Сертификат"></a>
+            <ImgLighbox :images="certificatesImages" />
           </div>
         </div>
       </div>
@@ -57,8 +56,39 @@
 </template>
 
 <script>
+import Certificate1 from '../../assets/images/certificate1.jpg';
+import Certificate2 from '../../assets/images/certificate2.jpg';
+import ImgLighbox from '../../Components/UI/ImgLightbox';
+
 export default ({
-  name: 'About'
+  name: 'About',
+  components: {
+    ImgLighbox
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.setCertificatesImagesArray();
+    });
+  },
+  data() {
+    return {
+      certificatesImages: []
+    }
+  },
+  methods: {
+    setCertificatesImagesArray() {
+      this.certificatesImages = [
+        {
+          src: Certificate1,
+          alt: 'Сертификат'
+        },
+        {
+          src: Certificate2,
+          alt: 'Сертификат'
+        }
+      ];
+    }
+  }
 });
 </script>
 

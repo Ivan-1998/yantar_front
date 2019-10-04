@@ -30,9 +30,6 @@ Vue.prototype.phone = '+7(7232)500-136';
 Vue.prototype.phoneHref = '+77232500136';
 Vue.prototype.email = 'info@yantar.kz';
 Vue.prototype.adress = 'г. Усть-Каменогорск, ул. Грейдерная 1/1';
- 
-
-library.add();
 new Vue({
   router,
   store,
