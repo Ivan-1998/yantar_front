@@ -1,0 +1,149 @@
+.consumers {
+  &-content {
+    margin-top: -200px;
+    padding-top: 275px;
+    padding-bottom: 30px;
+    background-image: url('~@/assets/images/landing-bg.png');
+    background-position: top center;
+    background-size: 100% 100%;
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 150px;
+      }
+
+      img {
+        position: absolute;
+        width: 250px;
+        top: -80px;
+      }
+
+      &-right {
+        justify-content: flex-end;
+        img {
+          left: 0;
+        }
+      }
+
+      &-left {
+        justify-content: flex-start;
+        img {
+          right: 0;
+        }
+      }
+
+      &-text {
+        width: 70%;
+
+        & > p {
+          font-size: 18px;
+          line-height: 25px;
+        }
+        & > ul {
+          margin-top: 20px;
+          font-size: 16px;
+          color: #404040;
+          li {
+            position: relative;
+            line-height: 25px;
+            &:before {
+              content: '';
+              width: 8px;
+              height: 8px;
+              background-color:#9E9E9E;
+              border-radius: 50%;
+              position: absolute;
+              top: calc(50% - 4px);
+              left: -20px;
+            }
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }      
+    }
+  }
+}
+
+@media (max-width: $desktop-big) {
+  .consumers {
+    &-content {
+      .item {
+        img {
+          width: 200px;
+          top: -50px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $desktop-little) {
+  .consumers {
+    &-content {
+      .item {
+        img {
+          width: 200px;
+          top: -50px;
+        }
+        &-text {
+          width: 65%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .consumers {
+    &-content {
+      background-image: none;
+      margin-top: 0;
+      padding-top: 0;
+      
+      .item {
+        justify-content: center;
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
+        img {
+          display: none;
+        }
+        &-text {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $phone) {
+
+
+  .consumers {
+    &-content {
+
+      .item {
+
+        &-text {
+          & > p {
+            font-size: 14px;
+            line-height: 25px;
+          }
+          & > ul {
+            margin-top: 20px;
+            font-size: 12px;
+            
+            li {
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
