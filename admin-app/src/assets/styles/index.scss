@@ -1,8 +1,8 @@
-@font-face {
-  src: url('/assets/fonts/SFRegular.ttf');
-  font-family: SFRegular;
-}
+// includes
+@import "./includes/variables.scss";
+@import "./includes/fonts.scss";
+@import "./includes/common.scss";
 
-body {
-  font-family: SFRegular;
-}
+// ui
+@import "./ui/forms.scss";
+@import "./ui/buttons.scss";

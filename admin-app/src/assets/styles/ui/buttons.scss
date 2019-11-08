@@ -1,0 +1,29 @@
+.btn {
+  width: 100%;
+  box-shadow: 0px 4px 10px #E5E5E5;
+  border-radius: 3px;
+  font-family: RobotoMedium, Arial, Helvetica, sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &-green {
+    background-color: $green;
+    color: #fff;
+    &:hover {
+      background-color: $greenHover;
+    }
+  }
+
+  // sizes
+  &-big {
+    min-width: 100px;
+    padding: 20px 0;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  &:focus {
+    border: none;
+  }
+}
