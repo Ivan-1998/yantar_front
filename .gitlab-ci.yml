@@ -6,7 +6,7 @@ stages:
 admin-app deploy:
   stage: deploy
   script:
-  - cd ~root/repositories/yantar_front/admin-app/
+  - cd /root/repositories/yantar_front/admin-app/
   - git pull origin master
   - npm install
   - npm run build
