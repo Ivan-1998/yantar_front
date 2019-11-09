@@ -8,6 +8,7 @@ admin-app deploy:
   script:
   - cd /root/repositories/yantar_front/
   - git pull origin master
+  - cd admin-app/
   - npm install
   - npm run build
   - mv -v dist/* /var/www/www-root/data/www/admin.yantar.in/
