@@ -6,7 +6,7 @@ stages:
 admin-app deploy:
   stage: deploy
   script:
-  - cd /root/
+  - cd /root/repositories/
   - git pull origin master
   - npm install
   - npm run build
