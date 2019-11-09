@@ -6,7 +6,7 @@ stages:
 admin-app deploy:
   stage: deploy
   script:
-  - cd /var/www/www-root/data/www/admin.yantar.in/
+  - cd /root/
   - git pull origin master
   - npm install
   - npm run build
