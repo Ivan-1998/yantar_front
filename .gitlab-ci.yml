@@ -1,4 +1,4 @@
-image: node:latest
+mage: node:latest
 
 stages:
  - deploy
@@ -6,7 +6,7 @@ stages:
 admin-app deploy:
   stage: deploy
   script:
-  - cd /root/repositories/yantar_front/admin-app/
+  - cd /var/www/www-root/data/www/admin.yantar.in/
   - git pull origin master
   - npm install
   - npm run build
@@ -15,4 +15,4 @@ admin-app deploy:
     changes:
     - admin-app/**/*
     refs:
-    - master   
+    - master 

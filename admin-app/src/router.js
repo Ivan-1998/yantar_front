@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
+
 Vue.use(VueRouter);
+Vue.use(VueResource);
 
 // Pages
 import Auth from "./Pages/Auth/Auth";
@@ -31,20 +34,6 @@ const router = new VueRouter({
     return { x: 0, y: 0 };
   },
   routes
-});
-
-router.beforeEach((to, from, next) => {
-  window.scrollTo(0,0);
-
-  if (!to.matched.some(record => record.meta.isPublic)) {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      return next({ name: 'auth' });
-    }
-    next();
-  }
-
-  next();
 });
 
 export default router;
