@@ -15,17 +15,14 @@ admin-app build:
     refs:
       - master
   artifacts:
-    expire_in: 1 week
-    paths:
-      - dist    
+    expire_in: 1 week   
 
 admin-app deploy:
   image: alpine:latest
   stage: deploy
   script:
-    - apk add --no-cache sshpass
-    - sshpass -p 't85H1E!7AuVaLL' ssh root@yantar.in "chmod +x /root/gitlab-deploy/front-admin_app.sh && 
-                          sudo /root/gitlab-deploy/front-admin_app.sh"
+    - apk add --no-cache rsync sshpass
+    - sshpass -p 't85H1E!7AuVaLL' rsync -rav --delete dist/ root@yantar.in:/var/www/www-root/data/www/admin.yantar.in/
 
   only:
     changes:
