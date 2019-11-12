@@ -3,6 +3,13 @@
 @import "./includes/fonts.scss";
 @import "./includes/common.scss";
 
+// components
+@import "./components/sidebar";
+
 // ui
 @import "./ui/forms.scss";
 @import "./ui/buttons.scss";
+
+// libraries
+@import "./libraries/vue-select/vue-select.scss";
+@import "./libraries/swal2/sweetalert2.scss";

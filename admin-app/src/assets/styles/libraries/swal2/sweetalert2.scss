@@ -1,0 +1,40 @@
+// SweetAlert2
+// github.com/sweetalert2/sweetalert2
+
+@import './theming';
+@import './polyfills';
+@import './animations';
+
+body {
+  @include sweetalert2-body();
+  @include sweetalert2-toasts-body();
+}
+
+// custom styles
+.swal2 {
+  &-toast {
+    display: block !important;
+    color: #676767;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 10px;
+      height: 100%;
+    }
+
+    &-error {
+      &:before {
+        background-color: $red;
+      }
+    }
+    &-success {
+      &:before {
+        background-color: $green;
+      }
+    }
+  }
+}

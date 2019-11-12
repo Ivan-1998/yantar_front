@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
+import VueSweetalert2 from 'vue-sweetalert2';
+import VueUploadComponent from 'vue-upload-component';
+import vSelect from 'vue-select'
 
 import App from "./App.vue";
 import router from "./router";
@@ -9,8 +12,12 @@ import store from "./store";
 import './validate';
 
 Vue.use(VueResource);
+Vue.use(VueSweetalert2);
+Vue.component('file-upload', VueUploadComponent);
+Vue.component('v-select', vSelect);
 
 Vue.http.options.root = 'http://api-new.yantar.in:5001/api/v1';
+Vue.prototype.imagesUrl = 'http://api-new.yantar.in:5001/uploads/';
 
 Vue.http.interceptors.push((request, next) => {
   const token = localStorage.getItem('token');

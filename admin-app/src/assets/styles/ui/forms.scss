@@ -4,17 +4,14 @@
     label {
       display: block;
       margin-bottom: 15px;
-      font-size: 16px;
       color: #000;
       text-align: left;
+      cursor: pointer;
     }
 
-    input[type="text"], input[type="email"],
-    input[type="password"] {
+    input[type="text"], input[type="number"],
+    input[type="email"], input[type="password"] {
       width: 100%;
-      padding-left: 25px;
-      height: 65px;
-      font-size: 16px;
       text-align: left;
       box-sizing: border-box;
       background: #FFFFFF;
@@ -24,9 +21,67 @@
       box-shadow: 0px 4px 10px #E5E5E5;
       transition: 0.2s;
 
-      &.input-error {
+      &.input-error{
         border: 1px solid $red !important;
       }
     } 
+
+    // sizes
+    &-big {
+      input[type="text"], input[type="number"],
+      input[type="email"], input[type="password"],
+      .v-select {
+        padding-left: 25px;
+        height: 65px;
+        font-size: 16px;
+      }
+
+      label {
+        font-size: 16px;
+      }
+    }
+    &-sm {
+      input[type="text"], input[type="number"],
+      input[type="email"], input[type="password"], .v-select {
+        padding-left: 15px;
+        height: 55px;
+        font-size: 14px;
+      }
+
+      label {
+        font-size: 14px;
+      }
+
+      .ql-editor {
+        font-size: 14px;
+      }
+    }
+
+    // vue editor
+    .quillWrapper {
+      border: 1px solid #F2F2F2;
+      border-radius: 3px;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 10px #E5E5E5;
+      background-color: #fff;
+      transition: 0.2s;
+
+      .ql-toolbar.ql-snow, .ql-container.ql-snow {
+        border: 1px solid transparent;
+      }
+
+      &.editor-error {
+        border: 1px solid $red !important;
+      }
+    }
+
+    .file-name {
+      position: relative;
+      .cross {
+        position: absolute;
+        top: -15px;
+        right: -20px;
+      }
+    }
   }
 }

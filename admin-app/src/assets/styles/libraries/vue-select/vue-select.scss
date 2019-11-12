@@ -1,0 +1,25 @@
+@import "global/variables";
+@import "global/component";
+@import "global/animations";
+@import "global/states";
+
+@import "modules/dropdown-toggle";
+@import "modules/open-indicator";
+@import "modules/clear";
+@import "modules/dropdown-menu";
+@import "modules/dropdown-option";
+@import "modules/selected";
+@import "modules/search-input";
+@import "modules/spinner";
+
+// custom styles
+.v-select {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px #E5E5E5;
+  border-radius: 3px;
+  transition: 0.2s;
+  border: 1px solid #F2F2F2;
+}
+.select-error {
+  border: 1px solid $red !important;
+}

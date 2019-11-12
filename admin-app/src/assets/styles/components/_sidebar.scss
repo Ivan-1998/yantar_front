@@ -1,0 +1,42 @@
+.sidebar {
+  width: 255px;
+  height: 100vh;
+
+  &-logo {
+    margin: 10px auto 30px auto;
+    width: 105px;
+  }
+
+  &-links {
+    padding: 0 45px;
+
+    &__link {
+      display: block;
+      margin-right: 5px;
+      font-size: 18px;
+      text-transform: uppercase;
+      transition: 0.2s;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      ul {
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+    }
+    &__sublink {
+      display: block;
+      margin: 10px 0;
+      color: #A5A5A5;
+      font-size: 16px;
+      text-transform: none;
+    }
+  }
+}
+
+.router-link-exact-active {
+  color: $green !important;
+}

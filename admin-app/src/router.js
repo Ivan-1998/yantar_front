@@ -8,6 +8,7 @@ Vue.use(VueResource);
 // Pages
 import Auth from "./Pages/Auth/Auth";
 import ProductsList from "./Pages/Products/ProductsList.vue";
+import ProductsListAdd from "./Pages/Products/ProductsAdd.vue";
 
 const routes = [
   {
@@ -19,9 +20,17 @@ const routes = [
     }
   },
   {
-    path: '/products',
-    name: 'products',
+    path: '/products-list',
+    name: 'productsList',
     component: ProductsList,
+    meta: {
+      isPublic: false
+    }
+  },
+  {
+    path: '/products-list/add',
+    name: 'productsListAdd',
+    component: ProductsListAdd,
     meta: {
       isPublic: false
     }

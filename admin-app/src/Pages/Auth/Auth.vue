@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-row flex-align-center flex-justify-center login">
+  <div class="flex-row flex-align-center flex-justify-center width-full login">
     <ValidationObserver tag="form"
                         ref="login"
                         class="box-shadow login-form"
@@ -8,7 +8,7 @@
       <img src="../../assets/images/logo.png" alt="Logo" class="login-form__logo" />
 
       <ValidationProvider tag="div"
-                          class="form-group mb-40"
+                          class="form-group form-group-big mb-40"
                           rules="required|email"
                           v-slot="{ errors }"
       >
@@ -21,7 +21,7 @@
       </ValidationProvider>
 
       <ValidationProvider tag="div"
-                          class="form-group mb-40"
+                          class="form-group form-group-big mb-40"
                           rules="required"
                           v-slot="{ errors }"
       >
@@ -34,7 +34,7 @@
       </ValidationProvider>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-big btn-green">Войти</button>
+        <button type="submit" class="width-full btn btn-big btn-green">Войти</button>
       </div>
     </ValidationObserver>
 
@@ -42,8 +42,11 @@
 </template>
 
 <script>
+import MixinCommonMethods from "../../mixins/MixinCommonMethods";
+
 export default {
   name: 'Auth',
+  mixins: [MixinCommonMethods],
   data() {
     return {
       user: {
@@ -59,18 +62,14 @@ export default {
       if (isValid) {
         this.$http.post('auth/login', this.user)
           .then(response => this.loginHandler(response))
-          // eslint-disable-next-line no-console
-          .catch(err => console.log(err))
+          .catch(err => this.$_errorCatchHandler(err))
       }
     },
     loginHandler(response) {
-      // eslint-disable-next-line no-console
-      console.log(response)
       const { data } = response;
-      // eslint-disable-next-line no-console
-      // console.log(response.data.token);
       localStorage.setItem('token', data.token);
-      this.$router.push({ name: 'products' });
+      
+      this.$router.push({ name: 'productsList' });
     }
   }
 }
