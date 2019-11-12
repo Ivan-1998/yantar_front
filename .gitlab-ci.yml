@@ -9,9 +9,6 @@ admin-app build:
     - cd admin-app
     - npm install
     - npm run build
-  artifacts:
-    paths:
-      - dist
   only:
     changes:
       - admin-app/**/*
