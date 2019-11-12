@@ -11,18 +11,19 @@ admin-app build:
     - npm run build
   only:
     changes:
-      - admin-app/**/*
+      - client-app/**/*
     refs:
       - master
 
 admin-app deploy:
   image: alpine:latest
   stage: deploy
-  script:
+  before_script:
     - apk add --no-cache rsync openssh
-    - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_dsa
+    - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  script:
     - ssh root@yantar.in "chmod +x /root/gitlab-deploy/front-admin_app.sh && 
                           sudo /root/gitlab-deploy/front-admin_app.sh"
 
