@@ -24,7 +24,7 @@ admin-app deploy:
     - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - ssh root@yantar.in "chmod +x /root/gitlab-deploy/front-admin_app.sh && 
+    - ssh gitlab@yantar.in "chmod +x /root/gitlab-deploy/front-admin_app.sh && 
                           sudo /root/gitlab-deploy/front-admin_app.sh"
 
   only:
