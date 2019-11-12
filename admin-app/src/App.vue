@@ -8,6 +8,7 @@
   </div>
 </template>
 
+
 <script>
 import Sidebar from "./Components/Sidebar";
 import TopMenu from "./Components/TopMenu";

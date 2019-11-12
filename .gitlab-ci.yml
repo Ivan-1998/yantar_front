@@ -6,6 +6,7 @@ admin-app build:
   image: node:latest
   stage: build
   script:
+    - cd admin-app
     - npm install
     - npm run build
   artifacts:
