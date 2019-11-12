@@ -5,11 +5,7 @@ admin-app deploy:
   image: alpine:latest
   stage: deploy
   script:
-    - apk add --no-cache sshpass
-    - mkdir -p ~/.ssh
-    - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_rsa
-    - chmod 600 ~/.ssh/id_rsa
-    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - apk add --no-cache openssh sshpass
     - sshpass -p 't85H1E!7AuVaLL' ssh root@yantar.in "chmod +x /root/gitlab-deploy/front-admin_app.sh && sudo /root/gitlab-deploy/front-admin_app.sh"
   only:
     changes:
