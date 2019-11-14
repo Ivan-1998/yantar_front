@@ -1,123 +1,121 @@
 <template>
-  <div>
-    <ValidationObserver class="flex-row flex-wrap"
-                        tag="form"
-                        ref="productsForm"
-                        @submit.prevent="sendForm"
-    >
+  <ValidationObserver class="flex-row flex-wrap"
+                      tag="form"
+                      ref="productsForm"
+                      @submit.prevent="sendForm"
+  >
 
-      <div class="col-33p mb-30">
-        <ValidationProvider tag="div"
-                            class="form-group form-group-sm"
-                            rules="required"
-                            v-slot="{ errors }"
+    <div class="col-33p mb-30">
+      <ValidationProvider tag="div"
+                          class="form-group form-group-sm"
+                          rules="required"
+                          v-slot="{ errors }"
+      >
+        <label for="name">Название</label>
+        <input v-model="product.name"
+                type="text" 
+                id="name"
+                :class="{'input-error' : errors[0]}"
+        />
+      </ValidationProvider>
+    </div>
+
+    <div class="col-33p mb-30">
+      <ValidationProvider tag="div"
+                          class="form-group form-group-sm"
+                          rules="required"
+                          v-slot="{ errors }"
+      >
+        <label for="size">Размер</label>
+        <input v-model="product.size"
+                type="text" 
+                id="size"
+                :class="{'input-error' : errors[0]}"
+        />
+      </ValidationProvider>
+    </div>
+
+    <div class="col-33p mb-30">
+      <ValidationProvider tag="div"
+                          class="form-group form-group-sm"
+                          rules="required"
+                          v-slot="{ errors }"
+      >
+        <label for="#">Тип</label>
+        <v-select v-model="product.type"
+                  label="title"
+                  placeholder="Выберите значение"
+                  :options="types"
+                  :searchable="false"
+                  name="type"
+                  :class="{ 'select-error': errors[0] }"
+        />
+      </ValidationProvider>
+      
+    </div>
+
+    <div class="col-33p mb-30">
+      <ValidationProvider tag="div" 
+                          class="form-group form-group-sm"
+                          rules="required"
+                          v-slot="{ errors }"
+      >
+        <label for="#">Описание</label>
+        <VueEditor v-model="product.description"
+                    :class="{'editor-error': errors[0]}"
+                    :editorToolbar="editorOptions" 
+        />
+      </ValidationProvider>
+    </div>
+
+    <div class="col-33p mb-30">
+      <ValidationProvider tag="div" class="form-group form-group-sm">
+        <label for="price">Цена</label>
+        <input type="text" 
+                id="price"
+        />
+      </ValidationProvider>
+    </div>
+
+    <div class="col-33p mb-30">
+      <ValidationProvider tag="div" class="form-group form-group-sm">
+        <label for="discount">Скидка (%)</label>
+        <input type="text" 
+              id="discount"
+        />
+      </ValidationProvider>
+    </div>
+
+    <div class="col-33p mb-30">
+      <div class="form-group form-group-sm">
+        <label for="#">Фото</label>
+        <file-upload v-if="!photos.length && !product.photo"
+                      v-model="photos"
+                      extensions="jpeg,jpg,png"
+                      accept="image/png,image/jpeg"
+                      :multiple="false"
+                      :size="1024 * 1024 * 100"
+                      class="d-block"
+                      @input="photoHandler"
         >
-          <label for="name">Название</label>
-          <input v-model="product.name"
-                 type="text" 
-                 id="name"
-                 :class="{'input-error' : errors[0]}"
-          />
-        </ValidationProvider>
-      </div>
+          <button class="btn d-block btn-md btn-blue">Загрузить фото</button>
+        </file-upload>
 
-      <div class="col-33p mb-30">
-        <ValidationProvider tag="div"
-                            class="form-group form-group-sm"
-                            rules="required"
-                            v-slot="{ errors }"
+        <a v-if="product.photo"
+            :href="`${fileUrl}/${product.photo}`"
+            class="photo-preview"
+            :style="`background-image: url(${fileUrl}/${product.photo})`"
+            target="_blank"
         >
-          <label for="size">Размер</label>
-          <input v-model="product.size"
-                 type="text" 
-                 id="size"
-                 :class="{'input-error' : errors[0]}"
-          />
-        </ValidationProvider>
+          <span class="cross" @click.prevent="removeImage"></span>
+        </a>
       </div>
+    </div>
 
-      <div class="col-33p mb-30">
-        <ValidationProvider tag="div"
-                            class="form-group form-group-sm"
-                            rules="required"
-                            v-slot="{ errors }"
-        >
-          <label for="#">Тип</label>
-          <v-select v-model="product.type"
-                    label="title"
-                    placeholder="Выберите значение"
-                    :options="types"
-                    :searchable="false"
-                    name="type"
-                    :class="{ 'select-error': errors[0] }"
-          />
-        </ValidationProvider>
-       
-      </div>
-
-      <div class="col-33p mb-30">
-        <ValidationProvider tag="div" 
-                            class="form-group form-group-sm"
-                            rules="required"
-                            v-slot="{ errors }"
-        >
-          <label for="#">Описание</label>
-          <VueEditor v-model="product.description"
-                     :class="{'editor-error': errors[0]}"
-                     :editorToolbar="editorOptions" 
-          />
-        </ValidationProvider>
-      </div>
-
-      <div class="col-33p mb-30">
-        <ValidationProvider tag="div" class="form-group form-group-sm">
-          <label for="price">Цена</label>
-          <input type="text" 
-                 id="price"
-          />
-        </ValidationProvider>
-      </div>
-
-      <div class="col-33p mb-30">
-        <ValidationProvider tag="div" class="form-group form-group-sm">
-          <label for="discount">Скидка (%)</label>
-          <input type="text" 
-                id="discount"
-          />
-        </ValidationProvider>
-      </div>
-
-      <div class="col-33p mb-30">
-        <div class="form-group form-group-sm">
-          <label for="#">Фото</label>
-          <file-upload v-if="!photos.length && !product.photo"
-                       v-model="photos"
-                       extensions="jpeg,jpg,png"
-                       accept="image/png,image/jpeg"
-                       :multiple="false"
-                       :size="1024 * 1024 * 100"
-                       class="d-block"
-                       @input="photoHandler"
-          >
-            <button class="btn d-block btn-md btn-blue">Загрузить фото</button>
-          </file-upload>
-
-          <a v-if="product.photo"
-             :href="`${fileUrl}/${product.photo}`"
-             class="photo-preview"
-             :style="`background-image: url(${fileUrl}/${product.photo})`"
-             target="_blank"
-          >
-            <span class="cross" @click.prevent="confirmRemoveImage"></span>
-          </a>
-        </div>
-      </div>
-
-      <div class="form-group form-group-sm form-group-submit">
-        <button type="submit" class="btn btn-md btn-green">Сохранить</button>
-      </div>
-    </ValidationObserver>
-  </div>
+    <div class="form-group form-group-sm form-group-submit">
+      <button type="submit" class="btn btn-md btn-green">Сохранить</button>
+    </div>
+  </ValidationObserver>
 </template>
 
 <script>
@@ -175,7 +173,7 @@ export default {
       this.$emit('photoHandler', photoName);
       this.$forceUpdate();
     },
-    async confirmRemoveImage() {
+    removeImage() {
       this.photos = [];
       this.$emit('photoHandler', '');
     },
@@ -201,22 +199,5 @@ export default {
 <style lang="scss" scoped>
   .form-group-submit {
     text-align: right;
-  }
-
-  .photo-preview {
-    position: relative;
-    display: block;
-    width: 150px;
-  height: 150px;
-    border-radius: 50%;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    .cross {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-    }
   }
 </style>

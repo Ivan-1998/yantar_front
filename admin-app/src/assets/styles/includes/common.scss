@@ -88,6 +88,9 @@ select:focus {outline: none;}
     &-center {
       justify-content: center;
     }
+    &-end {
+      justify-content: flex-end;
+    }
   }
 }
 

@@ -51,7 +51,7 @@ export default {
             },
             {
               title: 'Добавить товар',
-              toName: 'productsListAdd'
+              toName: 'productsAdd'
             }
           ]
         },
@@ -66,7 +66,7 @@ export default {
             },
             {
               title: 'Добавить новость',
-              toName: 'newsListAdd'
+              toName: 'newsAdd'
             }
           ]
         }

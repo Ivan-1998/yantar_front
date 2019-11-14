@@ -7,9 +7,14 @@ Vue.use(VueResource);
 
 // Pages
 import Auth from "./Pages/Auth/Auth";
+  // Products
 import ProductsList from "./Pages/Products/ProductsList.vue";
 import ProductsAdd from "./Pages/Products/ProductsAdd.vue";
 import ProductsEdit from "./Pages/Products/ProductsEdit.vue";
+  // News
+import NewsList from "./Pages/News/NewsList.vue";
+import NewsAdd from "./Pages/News/NewsAdd.vue";  
+import NewsEdit from "./Pages/News/NewsEdit.vue";
 
 const routes = [
   {
@@ -20,6 +25,7 @@ const routes = [
       isPublic: true
     }
   },
+  // products
   {
     path: '/products-list',
     name: 'productsList',
@@ -30,7 +36,7 @@ const routes = [
   },
   {
     path: '/products-list/add',
-    name: 'productsListAdd',
+    name: 'productsAdd',
     component: ProductsAdd,
     meta: {
       isPublic: false
@@ -38,12 +44,37 @@ const routes = [
   },
   {
     path: '/products-list/:productId',
-    name: 'productsListEdit',
+    name: 'productsEdit',
     component: ProductsEdit,
     meta: {
       isPublic: false
     }
   },
+  // news
+  {
+    path: '/news',
+    name: 'newsList',
+    component: NewsList,
+    meta: {
+      isPublic: false
+    }
+  },
+  {
+    path: '/news/add',
+    name: 'newsAdd',
+    component: NewsAdd,
+    meta: {
+      isPublic: false
+    }
+  },
+  {
+    path: '/news/:newsId',
+    name: 'newsEdit',
+    component: NewsEdit,
+    meta: {
+      isPublic: false
+    }
+  }
 ];
 
 const router = new VueRouter({

@@ -20,7 +20,7 @@
           <td>
             <div class="flex-row flex-align-center">
               <router-link :to="{ 
-                            name: 'productsListEdit',
+                            name: 'productsEdit',
                             params: {
                               productId: product._id
                             }
@@ -56,16 +56,14 @@ export default {
   beforeRouteEnter (to, from, next) {
     next(async vm => {
       await vm.getProducts();
+      vm.checkToast();
     })
-  },
-  mounted() {
-    this.checkToast();
   },
   data() {
     return {
       products: [],
       actions: [
-        { title: 'Предосмотр', method: this.previewProduct },
+        { title: 'Просмотреть', method: this.previewProduct },
         { title: 'Удалить', method: this.removeProduct }
       ]
     };

@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import ProductsForm from "./Components/ProductsForm";
 import MixinCommonMethods from "../../mixins/MixinCommonMethods";
+import ProductsForm from "./Components/ProductsForm";
 
 export default {
   name: 'ProductsAdd',
