@@ -40,15 +40,14 @@ export default {
      * @param {File} file
      */
     async uploadImage(file) {
-      let url;
       let formData = new FormData();
       formData.append('file', file);
 
-      url = this.$http.post('images', formData)
-        .then(response => response.data.url)
+      let name = this.$http.post('images', formData)
+        .then(response => response.data.name)
         .catch(err => this.$_errorCatchHandler(err))
 
-      return url;
+      return name;
     },
     removeImage(name) {
       return this.$http.delete(`images/${name}`)

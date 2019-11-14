@@ -8,7 +8,8 @@ Vue.use(VueResource);
 // Pages
 import Auth from "./Pages/Auth/Auth";
 import ProductsList from "./Pages/Products/ProductsList.vue";
-import ProductsListAdd from "./Pages/Products/ProductsAdd.vue";
+import ProductsAdd from "./Pages/Products/ProductsAdd.vue";
+import ProductsEdit from "./Pages/Products/ProductsEdit.vue";
 
 const routes = [
   {
@@ -30,11 +31,19 @@ const routes = [
   {
     path: '/products-list/add',
     name: 'productsListAdd',
-    component: ProductsListAdd,
+    component: ProductsAdd,
     meta: {
       isPublic: false
     }
-  }
+  },
+  {
+    path: '/products-list/:productId',
+    name: 'productsListEdit',
+    component: ProductsEdit,
+    meta: {
+      isPublic: false
+    }
+  },
 ];
 
 const router = new VueRouter({

@@ -90,27 +90,31 @@
       <div class="col-33p mb-30">
         <div class="form-group form-group-sm">
           <label for="#">Фото</label>
-          <file-upload v-if="!photos.length"
+          <file-upload v-if="!photos.length && !product.photo"
+                       v-model="photos"
                        extensions="jpeg,jpg,png"
                        accept="image/png,image/jpeg"
                        :multiple="false"
                        :size="1024 * 1024 * 100"
                        class="d-block"
                        @input="photoHandler"
-            >
-            <button class="btn d-block btn-sm btn-blue">Загрузить фото</button>
+          >
+            <button class="btn d-block btn-md btn-blue">Загрузить фото</button>
           </file-upload>
 
-          <a v-if="photos.length" href="#" class="file-name link-blue">
-            {{photos[0].name}}
-
+          <a v-if="product.photo"
+             :href="`${fileUrl}/${product.photo}`"
+             class="photo-preview"
+             :style="`background-image: url(${fileUrl}/${product.photo})`"
+             target="_blank"
+          >
             <span class="cross" @click.prevent="confirmRemoveImage"></span>
           </a>
         </div>
       </div>
 
       <div class="form-group form-group-sm form-group-submit">
-        <button type="submit" class="btn btn-sm btn-green">Сохранить</button>
+        <button type="submit" class="btn btn-md btn-green">Сохранить</button>
       </div>
     </ValidationObserver>
   </div>
@@ -130,6 +134,12 @@ export default {
     product: {
       type: Object,
       required: true
+    }
+  },
+  mounted() {
+    const productPhoto = this.product.photo;
+    if (productPhoto) {
+      this.photos.push({name: productPhoto});
     }
   },
   data() {
@@ -157,30 +167,17 @@ export default {
     };
   },
   methods: {
-    async confirmRemoveImage() {
-      const confirm = await this.$swal({
-        title: 'Вы действительно хотите удалить фотографию?',
-        confirmButtonText: 'Удалить',
-        showCancelButton: true,
-        cancelButtonText: 'Отмена',
-        customClass: 'swal2-confirm'
-      });
-
-      if (confirm.value) {    
-        const isRemove = await this.removeImage(this.product.photo);
-
-        if (isRemove) {
-          this.photos = [];
-          this.$emit('photoHandler', '');
-        }
-      }
-    },
     async photoHandler(value) {
       const photoName = await this.uploadImage(value[0].file);
       if (!photoName) return this.photos = [];
 
       this.photos = value;
       this.$emit('photoHandler', photoName);
+      this.$forceUpdate();
+    },
+    async confirmRemoveImage() {
+      this.photos = [];
+      this.$emit('photoHandler', '');
     },
     validatePhoto() {
       if (!this.photos.length) {
@@ -204,5 +201,22 @@ export default {
 <style lang="scss" scoped>
   .form-group-submit {
     text-align: right;
+  }
+
+  .photo-preview {
+    position: relative;
+    display: block;
+    width: 150px;
+  height: 150px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    .cross {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+    }
   }
 </style>

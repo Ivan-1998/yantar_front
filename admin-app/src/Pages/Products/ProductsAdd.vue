@@ -28,13 +28,10 @@ export default {
     photoHandler(value) {
       this.product.photo = value;
     },
-
     setData() {
       const data = Object.assign({}, this.product, {
         type: this.product.type.value
       });
-      // eslint-disable-next-line no-console
-      console.log(data);
       return data;
     },
     createProduct() {

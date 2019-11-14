@@ -115,6 +115,12 @@ select:focus {outline: none;}
     margin-bottom: 20px;
   }
 }
+// margin-right
+.mr {
+  &-5 {
+    margin-right: 5px;
+  }
+}
 
 // chevron
 .chevron {
@@ -153,6 +159,10 @@ select:focus {outline: none;}
   }
   &-blue {
     color: $blue;
+  }
+
+  &-left {
+    text-align: left;
   }
 }
 

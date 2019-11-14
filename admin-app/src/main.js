@@ -17,7 +17,7 @@ Vue.component('file-upload', VueUploadComponent);
 Vue.component('v-select', vSelect);
 
 Vue.http.options.root = 'http://api-new.yantar.in:5001/api/v1';
-Vue.prototype.imagesUrl = 'http://api-new.yantar.in:5001/uploads/';
+Vue.prototype.fileUrl = 'http://api-new.yantar.in:5001/uploads';
 
 Vue.http.interceptors.push((request, next) => {
   const token = localStorage.getItem('token');
@@ -35,31 +35,40 @@ Vue.http.interceptors.push((request, next) => {
   })
 });
 
-router.beforeEach((to, from, next) => {
+const requestMe = url => {
+  Vue.http.get(url)
+    .then(response => {
+      store.commit('setUserData', response.data.user);
+    }).catch(() => {
+      localStorage.removeItem('token');
+      window.location.href = '/';
+    });
+}
+
+router.beforeEach(async (to, from, next) => {
   window.scrollTo(0,0);
+  const token = localStorage.getItem('token');
+  const url = 'http://api-new.yantar.in:5001/api/v1/auth/me';
 
   if (!to.matched.some(record => record.meta.isPublic)) {
-    const token = localStorage.getItem('token');
 
-    if (!token) {
-      return next({ name: 'auth' });
-    }
+    if (!token) return next({ name: 'auth' });
 
-    const url = 'http://api-new.yantar.in:5001/api/v1/auth/me';
-
-    Vue.http.get(url)
-      .then(response => {
-        store.commit('setUserData', response.data.user);
-      }).catch(() => {
-        localStorage.removeItem('token');
-        window.location.href = '/';
-      });
-
+    await requestMe(url);
     next();
+  } else if (token) {
+
+    if (to.name === 'auth') {
+      await requestMe(url);
+      next({ name: 'productsList' });
+    }
+    
   }
 
   next();
 });
+
+
 
 Vue.config.productionTip = false;
 

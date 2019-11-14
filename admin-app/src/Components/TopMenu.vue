@@ -1,9 +1,9 @@
 <template>
-  <div class="top-menu"
-       @mouseenter="toggleShowSubmenu"
-       @mouseleave="toggleShowSubmenu"
-  >
-    <div class="top-menu-content">
+  <div class="top-menu">
+    <div class="top-menu-content" 
+         @mouseenter="toggleShowSubmenu"
+         @mouseleave="toggleShowSubmenu"
+    >
       <div class="top-menu__left">
         <p class="text-green">{{user.email}}</p> 
         <p>{{translateRole(user.role)}}</p>

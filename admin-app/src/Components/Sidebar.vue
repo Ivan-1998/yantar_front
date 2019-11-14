@@ -30,6 +30,11 @@
 <script>
 export default {
   name: 'Sidebar',
+  watch: {
+    '$route.name'() {
+      this.defineCurrentRoute();
+    }
+  },
   mounted() {
     this.defineCurrentRoute();
   },
@@ -90,6 +95,8 @@ export default {
           const linkActive = link.sublinks.find(sublink => sublink.toName === routeName);
           if (linkActive) {
             this.links[linkIndex].isSublinksShow = true;
+          } else {
+            this.links[linkIndex].isSublinksShow = false;
           }
         }
       })

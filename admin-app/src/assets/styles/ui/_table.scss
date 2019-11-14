@@ -1,0 +1,24 @@
+.table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  th {
+    font-size: 14px;
+    padding: 13px 10px;
+    border-bottom: 1px solid #C4C4C4;
+  }
+
+  tr {
+    font-size: 14px;
+    font-family: RobotoLight;
+    &:nth-child(odd) {
+      background-color: #F9F9F9;
+    }
+  }
+
+  td {
+    padding: 13px 10px 36px 10px;
+    border-bottom: 1px solid #C4C4C4;
+  }
+}

@@ -9,7 +9,16 @@
 // ui
 @import "./ui/forms.scss";
 @import "./ui/buttons.scss";
+@import "./ui/table";
 
 // libraries
 @import "./libraries/vue-select/vue-select.scss";
 @import "./libraries/swal2/sweetalert2.scss";
+
+
+/* Z_INDEXES ({className} - {value})
+
+actions-menu__dots - 5
+
+
+*/
