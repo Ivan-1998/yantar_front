@@ -69,6 +69,21 @@ export default {
               toName: 'newsAdd'
             }
           ]
+        },
+        {
+          title: 'Рецепты',
+          toName: 'recipes',
+          isSublinksShow: false,
+          sublinks: [
+            {
+              title: 'Все рецепты',
+              toName: 'recipesList'
+            },
+            {
+              title: 'Добавить рецепт',
+              toName: 'recipesAdd'
+            }
+          ]
         }
       ]
     };

@@ -14,7 +14,7 @@ import NewsForm from "./Components/NewsForm";
 import MixinCommonMethods from "../../mixins/MixinCommonMethods";
 
 export default {
-  name: 'NewsEdit',
+  name: 'newsEdit',
   components: {
     NewsForm
   },
@@ -47,7 +47,7 @@ export default {
     },
 
     photoHandler(value) {
-      this.product.photo = value;
+      this.news.photo = value;
     },
 
     updateNews() {

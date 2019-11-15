@@ -15,6 +15,10 @@ import ProductsEdit from "./Pages/Products/ProductsEdit.vue";
 import NewsList from "./Pages/News/NewsList.vue";
 import NewsAdd from "./Pages/News/NewsAdd.vue";  
 import NewsEdit from "./Pages/News/NewsEdit.vue";
+  // Recipes
+import RecipesList from "./Pages/Recipes/RecipesList.vue";  
+import RecipesAdd from "./Pages/Recipes/RecipesAdd.vue";
+import RecipesEdit from "./Pages/Recipes/RecipesEdit.vue";
 
 const routes = [
   {
@@ -74,7 +78,32 @@ const routes = [
     meta: {
       isPublic: false
     }
-  }
+  },
+  // recipes
+  {
+    path: '/recipes',
+    name: 'recipesList',
+    component: RecipesList,
+    meta: {
+      isPublic: false
+    }
+  },
+  {
+    path: '/recipes/add',
+    name: 'recipesAdd',
+    component: RecipesAdd,
+    meta: {
+      isPublic: false
+    }
+  },
+  {
+    path: '/recipes/:recipeId',
+    name: 'recipesEdit',
+    component: RecipesEdit,
+    meta: {
+      isPublic: false
+    }
+  },
 ];
 
 const router = new VueRouter({
