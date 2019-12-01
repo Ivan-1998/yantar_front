@@ -50,10 +50,10 @@
         </file-upload>
 
         <a v-if="recipe.photo"
-            :href="`${fileUrl}/${recipe.photo}`"
-            class="photo-preview"
-            :style="`background-image: url(${fileUrl}/${recipe.photo})`"
-            target="_blank"
+           :href="`${fileUrl}/${recipe.photo}`"
+           :style="`background-image: url(${fileUrl}/${recipe.photo})`"
+           class="photo-preview"
+           target="_blank"
         >
           <span class="cross" @click.prevent="removeImage"></span>
         </a>

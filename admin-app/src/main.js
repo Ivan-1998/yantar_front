@@ -38,12 +38,12 @@ Vue.http.interceptors.push((request, next) => {
 const requestMe = url => {
   Vue.http.get(url)
     .then(response => {
-      store.commit('setUserData', response.data.user);
+      store.commit('setUserData', response.data);
     }).catch(() => {
       localStorage.removeItem('token');
       window.location.href = '/';
     });
-}
+};
 
 router.beforeEach(async (to, from, next) => {
   window.scrollTo(0,0);

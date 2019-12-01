@@ -56,7 +56,7 @@ export default {
               .catch(err => this.$_errorCatchHandler(err))
     },
     updateNewsHandler() {
-      this.$store.commit('setToastInfo', { text: 'Новость обновлена', status: 'success' });
+      this.showToast({ text: 'Новость обновлена', status: 'success' });
       this.$router.push({ name: 'newsList' });
     }
   }

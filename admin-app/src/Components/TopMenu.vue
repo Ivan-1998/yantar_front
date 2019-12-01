@@ -5,28 +5,34 @@
          @mouseleave="toggleShowSubmenu"
     >
       <div class="top-menu__left">
-        <p class="text-green">{{user.email}}</p> 
+        <p class="text-green">{{userName}}</p> 
         <p>{{translateRole(user.role)}}</p>
       </div>
       <div class="top-menu__right flex-row flex-align-center">
-        <div class="user-photo"></div>
+        <div class="user-photo" :style="`background-image: url('${fileUrl}/${user.photo}')`"></div>
         <span class="chevron" :class="{'chevron-top': isSubmenuShow}"></span>
       </div>
 
       <ul v-if="isSubmenuShow" class="top-menu__sub">
-        <router-link tag="li" :to="{}" class="text-green">Мой профиль</router-link>
-        <li class="text-green">Выйти из аккаунта</li>
+        <router-link tag="li" :to="{ name: 'profile' }" class="text-green">Мой профиль</router-link>
+        <li class="text-green" @click="logout">Выйти из аккаунта</li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import MixinCommonMethods from "../mixins/MixinCommonMethods";
+
 export default {
   name: 'TopMenu',
+  mixins: [MixinCommonMethods],
   computed: {
     user() {
       return this.$store.state.user;
+    },
+    userName() {
+      return this.user.name && this.user.surname ? `${this.user.surname} ${this.user.name}` : this.user.email;
     }
   },
   data() {
@@ -45,6 +51,16 @@ export default {
       };
 
       return roles[role];
+    },
+
+    async logout() {
+      this.$http.get('auth/logout')
+        .then(() => this.logoutHandler())
+        .catch(err => this.$_errorCatchHandler(err));
+    },
+    logoutHandler() {
+      localStorage.clear();
+      window.location = '/';
     }
   }
 }
@@ -83,6 +99,9 @@ export default {
         margin-right: 5px;
         background-color: #E5E5E5;
         border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
     }
 
@@ -101,7 +120,7 @@ export default {
       li {
         cursor: pointer;
         &:not(:last-child) {
-          margin-bottom: 7px;
+          margin-bottom: 10px;
         }
       }
     }

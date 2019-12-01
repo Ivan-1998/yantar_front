@@ -80,7 +80,7 @@ export default {
               .catch(err => this.$_errorCatchHandler(err))
     },
     updateProductHandler() {
-      this.$store.commit('setToastInfo', { text: 'Товар обновлен', status: 'success' });
+      this.showToast({ text: 'Товар обновлен', status: 'success' });
       this.$router.push({ name: 'productsList' });
     }
   }

@@ -13,9 +13,9 @@
       >
         <label for="name">Название</label>
         <input v-model="product.name"
-                type="text" 
-                id="name"
-                :class="{'input-error' : errors[0]}"
+               type="text" 
+               id="name"
+               :class="{'input-error' : errors[0]}"
         />
       </ValidationProvider>
     </div>
@@ -93,8 +93,8 @@
                       v-model="photos"
                       extensions="jpeg,jpg,png"
                       accept="image/png,image/jpeg"
-                      :multiple="false"
                       :size="1024 * 1024 * 100"
+                      :multiple="false"
                       class="d-block"
                       @input="photoHandler"
         >
@@ -102,10 +102,10 @@
         </file-upload>
 
         <a v-if="product.photo"
-            :href="`${fileUrl}/${product.photo}`"
-            class="photo-preview"
-            :style="`background-image: url(${fileUrl}/${product.photo})`"
-            target="_blank"
+           :href="`${fileUrl}/${product.photo}`"
+           :style="`background-image: url(${fileUrl}/${product.photo})`"
+           class="photo-preview"
+           target="_blank"
         >
           <span class="cross" @click.prevent="removeImage"></span>
         </a>

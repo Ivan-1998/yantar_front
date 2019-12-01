@@ -4,11 +4,13 @@
 
     <table class="table text-left">
       <thead>
-        <th>Дата добавления</th>
-        <th>Название</th>
-        <th>Тип</th>
-        <th>Размер</th>
-        <th></th>
+        <tr>
+          <th>Дата добавления</th>
+          <th>Название</th>
+          <th>Тип</th>
+          <th>Размер</th>
+          <th></th>
+        </tr>
       </thead>
 
       <tbody>
@@ -48,15 +50,9 @@ export default {
     ActionsMenu
   },
   mixins: [MixinCommonMethods, MixinDate],
-  computed: {
-    toast() {
-      return this.$store.state.toast;
-    }
-  },
   beforeRouteEnter (to, from, next) {
     next(async vm => {
       await vm.getProducts();
-      vm.checkToast();
     })
   },
   data() {
@@ -69,12 +65,6 @@ export default {
     };
   },
   methods: {
-    checkToast() {
-      if (this.toast.text) {
-        return this.showToast({ text: this.toast.text, status: this.toast.status });
-      }
-      return false;
-    },
     getProducts() {
       return this.$http.get('products')
               .then(response => this.getProductsHandler(response))

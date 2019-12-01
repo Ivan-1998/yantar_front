@@ -26,8 +26,6 @@ export default {
         showConfirmButton: false,
         customClass: `swal2-toast swal2-toast-${status}`
       });
-      
-      this.$store.commit('setToastInfo', {});
     },
     $_errorCatchHandler(err) {
       this.showToast({

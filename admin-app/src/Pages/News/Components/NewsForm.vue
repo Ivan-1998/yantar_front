@@ -51,8 +51,8 @@
 
         <a v-if="news.photo"
             :href="`${fileUrl}/${news.photo}`"
-            class="photo-preview"
             :style="`background-image: url(${fileUrl}/${news.photo})`"
+            class="photo-preview"
             target="_blank"
         >
           <span class="cross" @click.prevent="removeImage"></span>

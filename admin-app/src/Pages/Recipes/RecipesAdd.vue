@@ -35,7 +35,7 @@ export default {
               .catch(err => this.$_errorCatchHandler(err))
     },
     createRecipeHandler() {
-      this.$store.commit('setToastInfo', { text: 'Рецепт добавлен', status: 'success' });
+      this.showToast({ text: 'Рецепт добавлен', status: 'success' });
       this.$router.push({ name: 'recipesList' });
     }
   }

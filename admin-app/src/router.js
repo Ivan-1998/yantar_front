@@ -19,6 +19,10 @@ import NewsEdit from "./Pages/News/NewsEdit.vue";
 import RecipesList from "./Pages/Recipes/RecipesList.vue";  
 import RecipesAdd from "./Pages/Recipes/RecipesAdd.vue";
 import RecipesEdit from "./Pages/Recipes/RecipesEdit.vue";
+  // Feedback
+import FeedbackList from "./Pages/Feedbacks/FeedbackList.vue"; 
+  // Profile
+import Profile from "./Pages/Profile/Profile.vue";  
 
 const routes = [
   {
@@ -104,6 +108,24 @@ const routes = [
       isPublic: false
     }
   },
+  // feedback
+  {
+    path: '/feedback-list',
+    name: 'feedbackList',
+    component: FeedbackList,
+    meta: {
+      isPublic: false
+    }
+  },
+  // profile
+  {
+    path: '/me',
+    name: 'profile',
+    component: Profile,
+    meta: {
+      isPublic: false
+    }
+  }
 ];
 
 const router = new VueRouter({

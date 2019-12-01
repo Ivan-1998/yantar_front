@@ -6,14 +6,20 @@
 
     <ul class="sidebar-links">
       <li v-for="(link, index) in links"
-          :key="index"
-          class="sidebar-links__link"
-          @click.self="linkHandlerClick(index)"
+                   :key="index"
+                   class="sidebar-links__link"
+                   :class="{'router-link-exact-active' : link.toName === $route.name}"
+                   @click.self="linkHandlerClick(index)"
+                   tag="li"
       >
         {{link.title}}
-        <span @click.self="toggleSublinksShow(index)" class="chevron" :class="{'chevron-top': link.isSublinksShow}"></span>  
+        <span v-if="link.sublinks"
+              class="chevron"
+              :class="{'chevron-top': link.isSublinksShow}"
+              @click.self="toggleSublinksShow(index)"
+        ></span>  
 
-        <ul v-if="link.sublinks.length && link.isSublinksShow">
+        <ul v-if="link.sublinks && link.isSublinksShow">
           <router-link v-for="(sublink, sublinkIndex) in link.sublinks"
                        :to="{ name: sublink.toName }"
                        :key="sublinkIndex"
@@ -57,7 +63,7 @@ export default {
         },
         {
           title: 'Новости',
-          toName: 'products',
+          toName: 'news',
           isSublinksShow: false,
           sublinks: [
             {
@@ -84,6 +90,10 @@ export default {
               toName: 'recipesAdd'
             }
           ]
+        },
+        {
+          title: 'Лиды',
+          toName: 'feedbackList'
         }
       ]
     };
@@ -92,7 +102,7 @@ export default {
     linkHandlerClick(index) {
       const link = this.links[index];
 
-      if (link.sublinks.length) {
+      if (link.sublinks) {
         return this.toggleSublinksShow(index);
       }
 
@@ -106,7 +116,7 @@ export default {
       const routeName = this.$route.name;
 
       this.links.forEach((link, linkIndex) => {
-        if (link.sublinks.length) {
+        if (link.sublinks) {
           const linkActive = link.sublinks.find(sublink => sublink.toName === routeName);
           if (linkActive) {
             this.links[linkIndex].isSublinksShow = true;

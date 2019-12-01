@@ -40,7 +40,7 @@ export default {
         .catch(err => this.$_errorCatchHandler(err))
     },
     createProductHandler() {
-      this.$store.commit('setToastInfo', { text: 'Добавлен новый товар', status: 'success' });
+      this.showToast({ text: 'Товар добавлен', status: 'success' });
       this.$router.push({ name: 'productsList' });
     }
   }
