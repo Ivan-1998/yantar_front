@@ -31,8 +31,11 @@ export default ({
   methods: {
     
     getRecipes() {
-      this.$http.get('api/recipes')
-        .then(response => this.recipes = response.body)
+      this.$http.get('recipes')
+        .then(response => this.getRecipesHandler(response))
+    },
+    getRecipesHandler(response) {
+      this.recipes = response.data.items;
     }
   }
 });

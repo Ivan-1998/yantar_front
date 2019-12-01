@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="product-img">
-      <img :src="`http://yantar.in:5000/${product.img[0]}`" :alt="product.title">
+      <img :src="`${fileUrl}/${product.photo}`" :alt="product.name">
     </div>
     <div class="product-inner">
-      <h4 class="product-title">{{product.title}}</h4>
+      <h4 class="product-title">{{productTitle}}</h4>
       <div class="product-link">
         <SmoothArrow :to="{}" :text="'Подробнее'" :linkModal="true" />
       </div>
@@ -20,6 +20,11 @@ export default {
   name: 'ProductsProductCart',
   components: {
     SmoothArrow
+  },
+  computed: {
+    productTitle() {
+      return `${this.product.name} - ${this.product.size}`
+    }
   },
   props: {
     product: {

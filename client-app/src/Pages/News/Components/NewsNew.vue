@@ -1,14 +1,14 @@
 <template>
-  <router-link :to="{name: 'new', params: {new_id: item.id}}" class="new">
+  <router-link :to="{name: 'new', params: {new_id: item._id}}" class="new">
     <div class="new-img"
-         :style="`background-image: url('http://yantar.in:5000${item.images[0]}')`">
+         :style="`background-image: url('${fileUrl}/${item.photo}')`">
     </div>
 
     <div class="new-content">
       <p class="new-title">{{item.title}}</p>
 
       <div class="new-link">
-        <SmoothArrow :to="{name: 'new', params: {new_id: item.id}}" />
+        <SmoothArrow :to="{name: 'new', params: {new_id: item._id}}" />
       </div>
       
     </div>

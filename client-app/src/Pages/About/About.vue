@@ -15,7 +15,7 @@
         </div>
 
         <div class="item">
-          <img src="../../assets/images/maslo-about.png">
+          <img src="../../assets/images/maslo-about.jpeg">
         </div>
 
         <div class="item">
@@ -43,7 +43,7 @@
       <div class="about__main__certificates">
         <div class="about__main__inner">
           <div class="left">
-            Наши лицензии и сертификаты
+            Наши сертификаты
           </div>
 
           <div class="right">

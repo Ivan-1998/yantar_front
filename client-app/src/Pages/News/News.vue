@@ -11,9 +11,14 @@ import MixinCommonMethods from '../../Mixins/MixinCommonMethods';
 
 export default ({
   name: 'News',
-  mixins: [MixinCommonMethods],
   components: {
     NewsNew
+  },
+  mixins: [MixinCommonMethods],
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.getNews();
+    })
   },
   mounted() {
     this.$store.commit('setPage', {title: 'Наши новости'});
@@ -23,15 +28,10 @@ export default ({
       news: []
     };
   },
-  beforeRouteEnter (to, from, next) {
-    next(vm => {
-      vm.getNews();
-    })
-  },
   methods: {
     getNews() {
-      this.$http.get('api/news')
-        .then(response => this.news = response.body)
+      return this.$http.get('news')
+        .then(response => this.news = response.data.items);
     }
   }
 });

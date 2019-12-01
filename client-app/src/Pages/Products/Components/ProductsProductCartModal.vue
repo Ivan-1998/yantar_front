@@ -4,10 +4,10 @@
          height="auto"
   >
     <div class="modal-product-info__img">
-      <img :src="`http://yantar.in:5000/${product.img[0]}`" :alt="`${product.title}`" />
+      <img :src="`${fileUrl}/${product.photo}`" :alt="product.name" />
     </div>
     <div class="modal-product-info__content">
-      <h2>{{product.title}}</h2>
+      <h2>{{productTitle}}</h2>
       <p v-html="product.description"></p>
     </div>
 
@@ -20,6 +20,11 @@
 <script>
 export default {
   name: 'ProductsProductCartModal',
+  computed: {
+    productTitle() {
+      return `${this.product.name} - ${this.product.size}`
+    }
+  },
   data() {
     return {
       product: {

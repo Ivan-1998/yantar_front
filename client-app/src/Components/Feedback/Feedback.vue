@@ -25,10 +25,10 @@
           />
         </div>
         <div class="form-group">
-          <input type="text"
-                 placeholder="Номер телефона"
-                 v-model="formData.phone_number"
-          />
+          <the-mask v-model="formData.phone"
+                    :mask="'+7(###)###-##-##'"
+                    placeholder="Номер телефона"
+          ></the-mask>
         </div>
 
         <ValidationProvider class="form-group"
@@ -68,6 +68,7 @@
 <script>
 import { ValidationObserver, ValidationProvider, extend , configure } from 'vee-validate';
 import { required, email, min } from 'vee-validate/dist/rules';
+import { TheMask } from 'vue-the-mask'
 import FeedbackModalSuccess from './FeedbackModalSuccess';
 
 extend('required', required);
@@ -83,14 +84,14 @@ export default ({
   name: 'Feedback',
   components: {
     ValidationObserver, ValidationProvider,
-    FeedbackModalSuccess
+    FeedbackModalSuccess, TheMask
   },
   data() {
     return {
       formData: {
         email: '',
         name: '',
-        phone_number: '',
+        phone: '',
         message: ''
       },
       isAgreePolicy: true
@@ -99,19 +100,26 @@ export default ({
   methods: {
     async sendForm() {
       const isValid = await this.$refs.feedback.validate();
+
+      if (this.formData.phone) {
+        this.formData.phone = `+7${this.formData.phone}`;
+      }    
+
       if (isValid) {
-        this.$http.post('api/feedback', this.formData)
-          .then(() => {
-            this.resetData();
-            this.$modal.show('feedback-send-success');
-          });
+        this.$http.post('feedback', this.formData)
+          .then(() => this.sendFormHandler());
       }
     },
+    sendFormHandler() {
+      this.resetData();
+      this.$modal.show('feedback-send-success');
+    },
+
     resetData() {
       this.formData = {
         email: '',
         name: '',
-        phone_number: '',
+        phone: '',
         message: ''
       };
       this.$refs.feedback.reset();
