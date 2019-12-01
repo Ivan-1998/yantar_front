@@ -1,6 +1,8 @@
 .sidebar {
   width: 255px;
   height: 100vh;
+  position: sticky;
+  top: 0;
 
   &-logo {
     margin: 10px auto 30px auto;
