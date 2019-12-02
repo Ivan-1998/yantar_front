@@ -1,6 +1,6 @@
 <template>
   <div v-if="contentLoaded" class="container box-shadow">
-    <h1 class="container-title">Редактирование рецепта</h1>
+    <h1 class="container-title">Редактирование отзыва</h1>
     <ReviewsForm v-model="review" @submit="updateReview" />
   </div>
 </template>

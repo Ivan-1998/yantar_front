@@ -83,7 +83,6 @@ export default {
 <style lang="scss">
   // includes
   @import '../../../assets/styles/includes/variables.scss';
-  @import '../../../assets/styles/libraries/slick.scss';
 
   .slick {
     &-arrows {

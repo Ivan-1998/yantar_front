@@ -1,4 +1,6 @@
 .about {
+  background: linear-gradient(180deg, #F7F7F7 1.44%, #FFFFFF 63.06%);
+
   &__header {
     background: url('~@/assets/images/sun.png') no-repeat;
     background-position: center center;
@@ -8,12 +10,21 @@
       margin: 0 auto;
     }
   }
+
+  // блок
+  &__block {
+    &-title {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
   &__main {
-    background: linear-gradient(180deg, #F7F7F7 1.44%, #FFFFFF 63.06%);
+    width: 1100px;
+    margin: 0 auto;
     padding: 100px 0;
     &__content {
-      width: 1100px;
-      margin: 0 auto;
+      margin: 0 auto 10px auto;
       display: flex;  
       flex-wrap: wrap;
       font-size: 19px;
@@ -40,8 +51,10 @@
       width: 1100px;
       margin: 0 auto;
     }
+
     &__inner {
-      border: 9px solid #FFE461;
+      outline: 9px solid #FFE461;
+      padding-top: 5px;
       width: 100%;
       height: 260px;
       margin: 30px auto;
@@ -70,6 +83,42 @@
       }
     }
   }
+
+  // отзывы
+  &__reviews {
+    margin-bottom: 20px;
+    position: relative;
+
+    .reviews-slider {
+      width: 900px;
+      margin: 0 auto;
+    
+      &__slide {
+        &-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }     
+    
+        &-photo {
+          flex: 0 0 125px;
+          height: 125px;
+          margin-right: 15px;
+          border-radius: 50%;
+          background-position: center;
+          background-size: contain;
+        }
+    
+        &-text {
+          .fio {
+            margin-top: 5px;
+            font-size: 16px;
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: $desktop-big) {
@@ -83,8 +132,8 @@
     }
     &__main {
       padding: 50px 0;
+      width: 85%;
       &__content {
-        width: 85%;
         .item {
           &:nth-child(4) {
             margin-left: 40px;
@@ -104,6 +153,14 @@
           right: 2%;
           padding: 15px;
         }
+      }
+    }
+
+    // отзывы
+    &__reviews {
+      width: 100%;
+      .reviews-slider {
+        width: 90%;
       }
     }
   }
@@ -151,6 +208,25 @@
               margin-right: 0;
               width: 100%;
             }
+          }
+        }
+      }
+    }
+
+    // отзывы
+    &__reviews {
+      .reviews-slider {
+        &__slide {
+          &-content {
+            flex-wrap: wrap;
+          }
+          
+          &-photo {
+            margin: 0 auto 10px auto;
+          }
+
+          &-text {
+            flex: 0 0 100%;
           }
         }
       }

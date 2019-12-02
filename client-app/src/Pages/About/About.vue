@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div v-if="contentLoaded" class="about">
     <div class="about__header">
       <div class="about__header__content flex-center">
         <img src="../../assets/images/yantar-company.png" alt="потребители">
@@ -7,6 +7,7 @@
     </div>
 
     <div class="about__main">
+      <h2 class="about__block-title">Информация о нас</h2>
       <div class="about__main__content">
         <div class="item">
           <p>Наше предприятие уже 20 лет на рынке Казахстана. Маслозавод «Янтарь» начал выпуск подсолнечного масла с октября 1999 года. А в 2013 году на прилавках магазинов появились ядро жаренное подсолнечное и семечки жареные, а также халва подсолнечная. 
@@ -40,6 +41,8 @@
         </div>
       </div>
 
+      <AboutReviews v-model="reviews" />
+
       <div class="about__main__certificates">
         <div class="about__main__inner">
           <div class="left">
@@ -60,19 +63,26 @@ import Certificate1 from '../../assets/images/certificate1.jpg';
 import Certificate2 from '../../assets/images/certificate2.jpg';
 import ImgLighbox from '../../Components/UI/ImgLightbox';
 
+import AboutReviews from "./Components/AboutReviews";
+
 export default ({
   name: 'About',
   components: {
-    ImgLighbox
+    ImgLighbox, AboutReviews
   },
   beforeRouteEnter (to, from, next) {
-    next(vm => {
+    next(async vm => {
+      await vm.getReviews();
       vm.setCertificatesImagesArray();
+
+      vm.contentLoaded = true;
     });
   },
   data() {
     return {
-      certificatesImages: []
+      certificatesImages: [],
+      reviews: [],
+      contentLoaded: false
     }
   },
   methods: {
@@ -87,6 +97,14 @@ export default ({
           alt: 'Сертификат'
         }
       ];
+    },
+
+    getReviews() {
+      return this.$http.get('reviews')
+        .then(response => this.getReviewsHandler(response))
+    },
+    getReviewsHandler(response) {
+      this.reviews = response.data.items;
     }
   }
 });
