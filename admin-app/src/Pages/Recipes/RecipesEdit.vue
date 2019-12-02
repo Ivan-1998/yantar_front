@@ -4,7 +4,7 @@
 
     <RecipesForm :recipe="recipe"
                  @photoHandler="photoHandler"
-                 @sendForm="updateNews"
+                 @sendForm="updateRecipe"
     />
   </div>
 </template>
@@ -18,12 +18,12 @@ export default {
   components: {
     RecipesForm
   },
+  mixins: [MixinCommonMethods],
   computed: {
     recipeId() {
       return this.$route.params.recipeId;
     }
   },
-  mixins: [MixinCommonMethods],
   beforeRouteEnter (to, from, next) {
     next(async vm => {
       await vm.getRecipe();
@@ -50,12 +50,12 @@ export default {
       this.recipe.photo = value;
     },
 
-    updateNews() {
+    updateRecipe() {
       return this.$http.put(`recipes/${this.recipeId}`, this.recipe)
-              .then(() => this.updateNewsHandler())
+              .then(() => this.updateRecipeHandler())
               .catch(err => this.$_errorCatchHandler(err))
     },
-    updateNewsHandler() {
+    updateRecipeHandler() {
       this.showToast({ text: 'Рецепт обновлён', status: 'success' });
       this.$router.push({ name: 'recipesList' });
     }

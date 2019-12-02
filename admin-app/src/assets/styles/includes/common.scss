@@ -96,6 +96,14 @@ select:focus {outline: none;}
 
 // cols
 .col {
+  &-50p {
+    width: calc(50% - 20px);
+    margin-right: 20px;
+    &:nth-child(2n) {
+      width: 50%;
+      margin-right: 0;
+    }
+  }
   &-33p {
     width: calc(33% - 20px);
     margin-right: 20px;

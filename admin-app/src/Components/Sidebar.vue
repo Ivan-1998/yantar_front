@@ -63,7 +63,6 @@ export default {
         },
         {
           title: 'Новости',
-          toName: 'news',
           isSublinksShow: false,
           sublinks: [
             {
@@ -78,7 +77,6 @@ export default {
         },
         {
           title: 'Рецепты',
-          toName: 'recipes',
           isSublinksShow: false,
           sublinks: [
             {
@@ -88,6 +86,20 @@ export default {
             {
               title: 'Добавить рецепт',
               toName: 'recipesAdd'
+            }
+          ]
+        },
+        {
+          title: 'Отзывы',
+          isSublinksShow: false,
+          sublinks: [
+            {
+              title: 'Все отзывы',
+              toName: 'reviewsList'
+            },
+            {
+              title: 'Добавить отзыв',
+              toName: 'reviewsAdd'
             }
           ]
         },

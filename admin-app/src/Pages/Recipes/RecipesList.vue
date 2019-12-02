@@ -18,12 +18,12 @@
           <td>
             <div class="flex-row flex-align-center flex-justify-end">
               <router-link :to="{ 
-                            name: 'recipesEdit',
-                            params: {
-                              recipeId: recipe._id
-                            }
-                           }" 
-                          class="mr-5 btn btn-sm btn-green"
+                              name: 'recipesEdit',
+                              params: {
+                                recipeId: recipe._id
+                              }
+                            }" 
+                            class="mr-5 btn btn-sm btn-green"
               >Открыть</router-link>
               <ActionsMenu :target="recipe" :actions="actions" @clickHandler="actionClickHandler" />
             </div>
@@ -41,7 +41,7 @@ import MixinDate from "../../mixins/MixinDate";
 import ActionsMenu from "../../Components/ActionsMenu";
 
 export default {
-  name: 'recipes',
+  name: 'recipesList',
   components: {
     ActionsMenu
   },
@@ -61,7 +61,6 @@ export default {
     };
   },
   methods: {
-
     getRecipes() {
       return this.$http.get('recipes')
               .then(response => this.getRecipesHandler(response))
@@ -95,7 +94,7 @@ export default {
       }
     },
     removeRecipeHandler() {
-      this.showToast({ text: 'Рецепт удалён!', status: 'success' });
+      this.showToast({ text: 'Рецепт удалён', status: 'success' });
       this.getRecipes();
     }
   }

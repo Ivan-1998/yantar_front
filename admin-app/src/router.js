@@ -23,6 +23,10 @@ import RecipesEdit from "./Pages/Recipes/RecipesEdit.vue";
 import FeedbackList from "./Pages/Feedbacks/FeedbackList.vue"; 
   // Profile
 import Profile from "./Pages/Profile/Profile.vue";  
+  // Reviews
+import ReviewsList from "./Pages/Reviews/ReviewsList.vue";
+import ReviewsAdd from "./Pages/Reviews/ReviewsAdd.vue";
+import ReviewsEdit from "./Pages/Reviews/ReviewsEdit.vue";  
 
 const routes = [
   {
@@ -125,7 +129,32 @@ const routes = [
     meta: {
       isPublic: false
     }
-  }
+  },
+  // reviews
+  {
+    path: '/reviews',
+    name: 'reviewsList',
+    component: ReviewsList,
+    meta: {
+      isPublic: false
+    }
+  },
+  {
+    path: '/reviews/add',
+    name: 'reviewsAdd',
+    component: ReviewsAdd,
+    meta: {
+      isPublic: false
+    }
+  },
+  {
+    path: '/reviews/:reviewId',
+    name: 'reviewsEdit',
+    component: ReviewsEdit,
+    meta: {
+      isPublic: false
+    }
+  },
 ];
 
 const router = new VueRouter({
