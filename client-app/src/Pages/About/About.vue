@@ -20,7 +20,7 @@
         </div>
 
         <div class="item">
-          <img src="../../assets/images/woman-about.png">
+          <img src="../../assets/images/about-sort-products.jpeg">
         </div>
 
         <div class="item">
