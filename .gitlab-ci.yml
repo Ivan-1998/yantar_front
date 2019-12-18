@@ -16,6 +16,8 @@ admin-app deploy:
       - admin-app/**/*
     refs:
       - master
+  cache:
+    - node_modules/    
 
 client-app deploy:
   image: alpine:latest
